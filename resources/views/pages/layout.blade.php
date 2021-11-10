@@ -185,7 +185,7 @@
         </section>
         <!-- slider-area-end -->
         <!-- about-area -->
-        <section class="about-area p-relative">
+        <section class="about-area p-relative" id="about-us">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-7 col-lg-7">
