@@ -2,7 +2,7 @@
 @section('title', 'Booking Our Service')
 @section('content')
      <!-- breadcrumb-area -->
-     <section class="breadcrumb-area d-flex align-items-center breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg">
+     <section class="breadcrumb-area d-flex align-items-center breadcrumb-bg" data-background="{{  asset('front-end/img/breadcrumb_bg.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -111,7 +111,7 @@
     </section>
     <!-- calculate-area-end -->
     <!-- faq-form-area -->
-    <section class="faq-form-area s-faq-form-bg pt-110 pb-120" data-background="img/bg/faq_form_bg03.jpg">
+    <section class="faq-form-area s-faq-form-bg pt-110 pb-120" data-background="{{  asset('front-end/img/faq_form_bg03.jpg') }}">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-xl-6 col-lg-8 faq-right-p pr-70">
@@ -151,7 +151,7 @@
     <!-- subscribe-area -->
     <section class="subscribe-area pt-120">
         <div class="container">
-            <div class="subscribe-bg" data-background="img/bg/subscribe_bg.jpg">
+            <div class="subscribe-bg" data-background="{{  asset('front-end/img/subscribe_bg.jpg') }}">
                 <div class="row align-items-center">
                     <div class="col-lg-4">
                         <div class="subscribe-content">
@@ -177,25 +177,25 @@
                 <div class="col-12">
                     <div class="s-brand-active">
                         <div class="single-brand">
-                            <img src="img/brand/brand_img01.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img01.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img02.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img02.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img03.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img03.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img04.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img04.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img05.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img05.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img06.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img06.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img03.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img03.png') }}" alt="brand">
                         </div>
                     </div>
                 </div>
