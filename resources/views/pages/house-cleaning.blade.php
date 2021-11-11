@@ -2,7 +2,7 @@
 @section('title', 'House Cleaning')
 @section('content')
      <!-- breadcrumb-area -->
-     <section class="breadcrumb-area d-flex align-items-center breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg">
+     <section class="breadcrumb-area d-flex align-items-center breadcrumb-bg" data-background="{{  asset('front-end/img/breadcrumb_bg.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -10,7 +10,7 @@
                         <h2>House Cleaning</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">House Cleaning</li>
                             </ol>
                         </nav>
@@ -29,16 +29,16 @@
                         <div class="hcleaning-img mb-30">
                             <ul>
                                 <li>
-                                    <img src="img/services/house_clean01.jpg" alt="img">
+                                    <img src="{{  asset('front-end/img/house_clean01.jpg') }}" alt="img">
                                 </li>
                                 <li>
-                                    <img src="img/services/house_clean02.jpg" alt="img">
+                                    <img src="{{  asset('front-end/img/house_clean02.jpg') }}" alt="img">
                                 </li>
                                 <li>
-                                    <img src="img/services/house_clean03.jpg" alt="img">
+                                    <img src="{{  asset('front-end/img/house_clean03.jpg') }}" alt="img">
                                 </li>
                                 <li>
-                                    <img src="img/services/house_clean04.jpg" alt="img">
+                                    <img src="{{  asset('front-end/img/house_clean04.jpg') }}" alt="img">
                                 </li>
                             </ul>
                         </div>
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="hcleaning-img mt-15 mb-35">
-                            <img src="img/services/house_clean05.jpg" alt="img">
+                            <img src="{{  asset('front-end/img/house_clean05.jpg') }}" alt="img">
                         </div>
                         <div class="hcleaning-title mb-25">
                             <h4>Why Book House Cleaning Services with Handy?</h4>
@@ -244,12 +244,12 @@
                             </div>
                             <div class="sidebar-services-list">
                                 <ul>
-                                    <li><img src="img/icon/services_icon01.png" alt="img"><a href="#">Plumbing Service</a></li>
-                                    <li><img src="img/icon/services_icon02.png" alt="img"><a href="#">Car Washing</a></li>
-                                    <li><img src="img/icon/services_icon03.png" alt="img"><a href="#">House Cleaning</a></li>
-                                    <li><img src="img/icon/services_icon04.png" alt="img"><a href="#">Carpet Cleaning</a></li>
-                                    <li><img src="img/icon/services_icon05.png" alt="img"><a href="#">Office Cleaning</a></li>
-                                    <li><img src="img/icon/services_icon06.png" alt="img"><a href="#">Windows Cleaning</a></li>
+                                    <li><img src="{{  asset('front-end/img/services_icon01.png') }}" alt="img"><a href="#">Plumbing Service</a></li>
+                                    <li><img src="{{  asset('front-end/img/services_icon02.png') }}" alt="img"><a href="#">Car Washing</a></li>
+                                    <li><img src="{{  asset('front-end/img/services_icon03.png') }}" alt="img"><a href="#">House Cleaning</a></li>
+                                    <li><img src="{{  asset('front-end/img/services_icon04.png') }}" alt="img"><a href="#">Carpet Cleaning</a></li>
+                                    <li><img src="{{  asset('front-end/img/services_icon05.png') }}" alt="img"><a href="#">Office Cleaning</a></li>
+                                    <li><img src="{{  asset('front-end/img/services_icon06.png') }}" alt="img"><a href="#">Windows Cleaning</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -285,16 +285,16 @@
                             </div>
                             <div class="sidebar-services-list">
                                 <ul>
-                                    <li><img src="img/icon/pdf.png" alt="img"><a href="#">Download Document .pdf</a></li>
-                                    <li><img src="img/icon/doc.png" alt="img"><a href="#">Download Document .doc</a></li>
-                                    <li><img src="img/icon/zip.png" alt="img"><a href="#">Download Document .zip</a></li>
+                                    <li><img src="{{  asset('front-end/img/pdf.png') }}" alt="img"><a href="#">Download Document .pdf</a></li>
+                                    <li><img src="{{  asset('front-end/img/doc.png') }}" alt="img"><a href="#">Download Document .doc</a></li>
+                                    <li><img src="{{  asset('front-end/img/zip.png') }}" alt="img"><a href="#">Download Document .zip</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="services-widget services-add">
                             <div class="add-wrap p-relative">
                                 <div class="add-img p-relative">
-                                    <img src="img/services/services_sidebar_img.jpg" alt="img">
+                                    <img src="{{  asset('front-end/img/services_sidebar_img.jpg') }}" alt="img">
                                 </div>
                                 <div class="add-content">
                                     <h4>We Are Always Ready to Serve you</h4>
@@ -312,7 +312,7 @@
     <!-- subscribe-area -->
     <section class="subscribe-area">
         <div class="container">
-            <div class="subscribe-bg" data-background="img/bg/subscribe_bg.jpg">
+            <div class="subscribe-bg" data-background="{{  asset('front-end/img/subscribe_bg.jpg') }}">
                 <div class="row align-items-center">
                     <div class="col-lg-4">
                         <div class="subscribe-content">
@@ -338,25 +338,25 @@
                 <div class="col-12">
                     <div class="s-brand-active">
                         <div class="single-brand">
-                            <img src="img/brand/brand_img01.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img01.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img02.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img02.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img03.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img03.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img04.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img04.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img05.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img05.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img06.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img06.png') }}" alt="brand">
                         </div>
                         <div class="single-brand">
-                            <img src="img/brand/brand_img03.png" alt="brand">
+                            <img src="{{  asset('front-end/img/brand_img03.png') }}" alt="brand">
                         </div>
                     </div>
                 </div>
