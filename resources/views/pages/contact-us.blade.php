@@ -2,7 +2,7 @@
 @section('title', 'Our Contacts')
 @section('content')
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area d-flex align-items-center breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg">
+    <section class="breadcrumb-area d-flex align-items-center breadcrumb-bg" data-background="{{  asset('front-end/img/breadcrumb_bg.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -10,7 +10,7 @@
                         <h2>Contact Us</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
                             </ol>
                         </nav>
@@ -21,7 +21,7 @@
     </section>
     <!-- breadcrumb-area-end -->
     <!-- map-area -->
-    <div class="map-wrap" data-background="img/map_img.jpg"></div>
+    <div class="map-wrap" data-background="{{  asset('front-end/img/map_img.jpg') }}"></div>
     <!-- map-area-end -->
     <!-- contact-area -->
     <section class="inner-contact-area pb-85">
