@@ -22,5 +22,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [PagesContentController::class, 'index']);
+Route::get('/about-us', [PagesContentController::class, 'aboutus']);
+Route::get('/services', [PagesContentController::class, 'services']);
+Route::get('/services/house-cleaning', [PagesContentController::class, 'housecleaning']);
+Route::get('/services/cleaning-services', [PagesContentController::class, 'cleaningservices']);
+Route::get('/services/plumbing-services', [PagesContentController::class, 'plumbingservices']);
+Route::get('/services/car-washing', [PagesContentController::class, 'carwashing']);
+Route::get('/contact-us', [PagesContentController::class, 'contactus']);
+Route::get('/booking-service', [PagesContentController::class, 'bookingservice']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ 
