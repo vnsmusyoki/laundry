@@ -26,7 +26,7 @@
     <!-- Main style file -->
     <link rel="stylesheet" href="{{ asset('backend/dist/css/app.min.css') }}" type="text/css">
 
-
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 </head>
 
 <body>
@@ -984,6 +984,8 @@
 
     <!-- Main Javascript file -->
     <script src="{{ asset('backend/dist/js/app.min.js') }}"></script>
+    <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
+    {!! Toastr::message() !!}
 </body>
 
 </html>

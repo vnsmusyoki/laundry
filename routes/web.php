@@ -34,6 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/dashboard', [AdminAccountController::class, 'index'])->name('admin');
 Route::prefix('admin')->group(function () {
     Route::get('add-collection-point', [AdminAccountController::class, 'addcollectionpoint']);
+    Route::post('store-checkpoint', [AdminAccountController::class, 'storecollectionpoint']);
 });
 
 // https://radixtouch.com/templates/admin/smart/source/light/index.html
