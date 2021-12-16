@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminAccountController;
 use App\Http\Controllers\PagesContentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 
 Auth::routes();
 
@@ -32,7 +31,9 @@ Route::get('/contact-us', [PagesContentController::class, 'contactus']);
 Route::get('/booking-service', [PagesContentController::class, 'bookingservice']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
-
+Route::get('/admin/dashboard', [AdminAccountController::class, 'index'])->name('admin');
+Route::prefix('admin')->group(function () {
+    Route::get('add-collection-point', [AdminAccountController::class, 'addcollectionpoint']);
+});
 
 // https://radixtouch.com/templates/admin/smart/source/light/index.html
