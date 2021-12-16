@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Admin | @yield('title')</title>
+    <title> Buyer Dashboard - Vetra | E-Commerce HTML Admin Dashboard Template </title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap icons -->
     <link rel="stylesheet" href="{{ asset('backend/dist/icons/bootstrap-icons-1.4.0/bootstrap-icons.min.css') }}"
         type="text/css">
     <!-- Bootstrap Docs -->
@@ -32,10 +31,316 @@
 <body>
 
 
+    <!-- sidebars -->
+
+    <!-- notifications sidebar -->
+    <div class="sidebar" id="notifications">
+        <div class="sidebar-header d-block align-items-end">
+            <div class="align-items-center d-flex justify-content-between py-4">
+                Notifications
+                <button data-sidebar-close>
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active nav-link-notify" data-bs-toggle="tab" href="#activities">Activities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#notes">Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#alerts">Alerts</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-content">
+            <div class="tab-content">
+                <div class="tab-pane active" id="activities">
+                    <div class="tab-pane-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="px-0 list-group-item">
+                                <a href="#" class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <figure class="avatar avatar-info me-3">
+                                            <span class="avatar-text rounded-circle">
+                                                <i class="bi bi-person"></i>
+                                            </span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 fw-bold d-flex justify-content-between">
+                                            You joined a group
+                                        </p>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-clock me-1"></i> Today
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <a href="#" class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <figure class="avatar avatar-warning me-3">
+                                            <span class="avatar-text rounded-circle">
+                                                <i class="bi bi-hdd"></i>
+                                            </span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 fw-bold d-flex justify-content-between">
+                                            Storage is running low!
+                                        </p>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-clock me-1"></i> Today
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <a href="#" class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <figure class="avatar avatar-secondary me-3">
+                                            <span class="avatar-text rounded-circle">
+                                                <i class="bi bi-file-text"></i>
+                                            </span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 d-flex justify-content-between">
+                                            1 person sent a file
+                                        </p>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-clock me-1"></i> Yesterday
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <a href="#" class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <figure class="avatar avatar-success me-3">
+                                            <span class="avatar-text rounded-circle">
+                                                <i class="bi bi-download"></i>
+                                            </span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 d-flex justify-content-between">
+                                            Reports ready to download
+                                        </p>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-clock me-1"></i> Yesterday
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <a href="#" class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <figure class="avatar avatar-info me-3">
+                                            <span class="avatar-text rounded-circle">
+                                                <i class="bi bi-lock"></i>
+                                            </span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 d-flex justify-content-between">
+                                            2 steps verification
+                                        </p>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-clock me-1"></i> 20 min ago
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane-footer">
+                        <a href="#" class="btn btn-success">
+                            <i class="bi bi-check2 me-2"></i> Make All Read
+                        </a>
+                        <a href="#" class="btn btn-danger ms-2">
+                            <i class="bi bi-trash me-2"></i> Delete all
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="notes">
+                    <div class="tab-pane-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="px-0 list-group-item">
+                                <p class="mb-0 fw-bold text-success d-flex justify-content-between">
+                                    This month's report will be prepared.
+                                </p>
+                                <span class="text-muted small">
+                                    <i class="bi bi-clock me-1"></i> Today
+                                </span>
+                                <div class="mt-2">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-danger ms-2">Delete</a>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <p class="mb-0 fw-bold text-success d-flex justify-content-between">
+                                    An email will be sent to the customer.
+                                </p>
+                                <span class="text-muted small">
+                                    <i class="bi bi-clock me-1"></i> Today
+                                </span>
+                                <div class="mt-2">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-danger ms-2">Delete</a>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <p class="mb-0 d-flex justify-content-between">
+                                    The meeting will be held.
+                                </p>
+                                <span class="text-muted small">
+                                    <i class="bi bi-clock me-1"></i> Yesterday
+                                </span>
+                                <div class="mt-2">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-danger ms-2">Delete</a>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <p class="mb-0 fw-bold text-success d-flex justify-content-between">
+                                    Conversation with users.
+                                </p>
+                                <span class="text-muted small">
+                                    <i class="bi bi-clock me-1"></i> Yesterday
+                                </span>
+                                <div class="mt-2">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-danger ms-2">Delete</a>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <p class="mb-0 fw-bold text-warning d-flex justify-content-between">
+                                    Payment refund will be made to the customer.
+                                </p>
+                                <span class="text-muted small">
+                                    <i class="bi bi-clock me-1"></i> 20 min ago
+                                </span>
+                                <div class="mt-2">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-danger ms-2">Delete</a>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item">
+                                <p class="mb-0 d-flex justify-content-between">
+                                    Payment form will be activated.
+                                </p>
+                                <span class="text-muted small">
+                                    <i class="bi bi-clock me-1"></i> 20 min ago
+                                </span>
+                                <div class="mt-2">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-danger ms-2">Delete</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane-footer">
+                        <a href="#" class="btn btn-primary btn-block">
+                            <i class="bi bi-plus me-2"></i> Add Notes
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="alerts">
+                    <div class="tab-pane-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="px-0 list-group-item d-flex">
+                                <div class="flex-shrink-0">
+                                    <figure class="avatar avatar-warning me-3">
+                                        <span class="avatar-text rounded-circle">
+                                            <i class="bi bi-lock"></i>
+                                        </span>
+                                    </figure>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 fw-bold d-flex justify-content-between">
+                                        Signed in with a different device.
+                                    </p>
+                                    <span class="text-muted small">
+                                        <i class="bi bi-clock me-1"></i> Yesterday
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item d-flex">
+                                <div class="flex-shrink-0">
+                                    <figure class="avatar avatar-warning me-3">
+                                        <span class="avatar-text fw-bold rounded-circle">
+                                            <i class="bi bi-file-text"></i>
+                                        </span>
+                                    </figure>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 fw-bold d-flex justify-content-between">
+                                        Your billing information is not active.
+                                    </p>
+                                    <span class="text-muted small">
+                                        <i class="bi bi-clock me-1"></i> Yesterday
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item d-flex">
+                                <div class="flex-shrink-0">
+                                    <figure class="avatar avatar-warning me-3">
+                                        <span class="avatar-text rounded-circle">
+                                            <i class="bi bi-person"></i>
+                                        </span>
+                                    </figure>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 d-flex justify-content-between">
+                                        Your subscription has expired.
+                                    </p>
+                                    <span class="text-muted small">
+                                        <i class="bi bi-clock me-1"></i> Today
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="px-0 list-group-item d-flex">
+                                <div class="flex-shrink-0">
+                                    <figure class="avatar avatar-warning me-3">
+                                        <span class="avatar-text rounded-circle">
+                                            <i class="bi bi-hdd"></i>
+                                        </span>
+                                    </figure>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 d-flex justify-content-between">
+                                        Your storage space is running low
+                                    </p>
+                                    <span class="text-muted small">
+                                        <i class="bi bi-clock me-1"></i> Today
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane-footer">
+                        <a href="#" class="btn btn-success">
+                            <i class="bi bi-check2 me-2"></i> Make All Read
+                        </a>
+                        <a href="#" class="btn btn-danger ms-2">
+                            <i class="bi bi-trash me-2"></i> Delete all
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ./ notifications sidebar -->
+
+    <!-- settings sidebar -->
     <div class="sidebar" id="settings">
         <div class="sidebar-header">
             <div>
-                <i class="bi bi-gear me-2"></i> Settings
+                <i class="bi bi-gear me-2"></i>
+                Settings
             </div>
             <button data-sidebar-close>
                 <i class="bi bi-arrow-right"></i>
@@ -212,11 +517,10 @@
     <!-- menu -->
     <div class="menu">
         <div class="menu-header">
-            <a href="{{ route('admin') }}" class="menu-header-logo">
-                <img src="{{ asset('front-end/img/logo/logo.png') }}" alt="Logo">
+            <a href="index.html" class="menu-header-logo">
+                <img src="../../assets/images/logo.svg" alt="logo">
             </a>
-
-            <a href="{{ route('admin') }}" class="btn btn-sm menu-close-btn">
+            <a href="index.html" class="btn btn-sm menu-close-btn">
                 <i class="bi bi-x"></i>
             </a>
         </div>
@@ -224,12 +528,11 @@
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center" data-bs-toggle="dropdown">
                     <div class="avatar me-3">
-                        <img src="{{ asset('backend/assets/images/user/man_avatar3.jpg') }}" class="rounded-circle"
-                            alt="image">
+                        <img src="../../assets/images/user/man_avatar3.jpg" class="rounded-circle" alt="image">
                     </div>
                     <div>
-                        <div class="fw-bold">{{ Auth::user()->name }}</div>
-                        <small class="text-muted">Admin</small>
+                        <div class="fw-bold">Timotheus Bendan</div>
+                        <small class="text-muted">Sales Manager</small>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
@@ -250,7 +553,7 @@
             <ul>
                 <li class="menu-divider">E-Commerce</li>
                 <li>
-                    <a class="active" href="index.html">
+                    <a href="index.html">
                         <span class="nav-link-icon">
                             <i class="bi bi-bar-chart"></i>
                         </span>
@@ -278,16 +581,19 @@
                         <span class="nav-link-icon">
                             <i class="bi bi-truck"></i>
                         </span>
-                        <span>Collection Points</span>
+                        <span>Products</span>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ url('admin/all-collection-points') }}">List
+                            <a href="./product-list.html">List
                                 View</a>
                         </li>
-
                         <li>
-                            <a href="{{ url('admin/add-collection-point') }}">Create New Point</a>
+                            <a href="./product-grid.html">Grid
+                                View</a>
+                        </li>
+                        <li>
+                            <a href="./product-detail.html">Product Detail</a>
                         </li>
                         <li>
                             <a href="./shopping-cart.html">Shopping
@@ -307,7 +613,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="./buyer-dashboard.html">Dashboard</a>
+                            <a class="active" href="./buyer-dashboard.html">Dashboard</a>
                         </li>
                         <li>
                             <a href="./buyer-orders.html">Orders</a>
@@ -498,18 +804,12 @@
                     </a>
                 </li>
                 <li>
-
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                    <a href="./faq.html">
                         <span class="nav-link-icon">
                             <i class="bi bi-question-circle"></i>
                         </span>
-                        <span>Log Out</span>
+                        <span>FAQ</span>
                     </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
                 </li>
                 <li class="menu-divider">User Interface</li>
                 <li>
@@ -833,7 +1133,7 @@
                 <img width="100" src="../../assets/images/logo.svg" alt="logo">
             </a>
             <!-- ./ Logo -->
-            <div class="page-title">Overview</div>
+            <div class="page-title">Buyer Dashboard</div>
             <form class="search-form">
                 <div class="input-group">
                     <button class="btn btn-outline-light" type="button" id="button-addon1">
@@ -927,9 +1227,6 @@
                         </div>
                     </li>
                     <li class="nav-item ms-3">
-                        <button class="btn btn-primary btn-icon">
-                            <i class="bi bi-plus-circle"></i> Add Product
-                        </button>
                     </li>
                 </ul>
             </div>
@@ -970,16 +1267,9 @@
     </div>
     <!-- ./ layout-wrapper -->
 
-    <!-- Bundle scripts -->
     <script src="{{ asset('backend/libs/bundle.js') }}"></script>
-
-    <!-- Apex chart -->
     <script src="{{ asset('backend/libs/charts/apex/apexcharts.min.js') }}"></script>
-
-    <!-- Slick -->
     <script src="{{ asset('backend/libs/slick/slick.min.js') }}"></script>
-
-    <!-- Examples -->
     <script src="{{ asset('backend/dist/js/examples/dashboard.js') }}"></script>
 
     <!-- Main Javascript file -->

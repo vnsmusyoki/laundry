@@ -9,9 +9,14 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class AdminAccountController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('admin.dashboard');
@@ -53,7 +58,7 @@ class AdminAccountController extends Controller
         $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
         $Extension = $request->picture->getClientOriginalExtension();
         $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
-        $path = $request->picture->storeAs('profiles', $filenameToStore, 'public');
+        $path = $request->picture->storeAs('collectionpoints', $filenameToStore, 'public');
         $station->picture = $filenameToStore;
         $station->save();
 
@@ -69,5 +74,49 @@ class AdminAccountController extends Controller
     {
         $points = CollectionPoint::all();
         return view('admin.collectionpoints.index', compact('points'));
+    }
+    public function showcollectionpoint($point)
+    {
+        $point = CollectionPoint::findOrFail($point);
+        return view('admin.collectionpoints.view-collection-point', compact('point'));
+    }
+    public function editcollectionpoint($point)
+    {
+        $point = CollectionPoint::findOrFail($point);
+        return view('admin.collectionpoints.edit-collection-point', compact('point'));
+    }
+    public function updatecollectionpoint(Request $request, $id)
+    {
+        $this->validate($request, [
+            'email' => 'required|email|exists:users',
+            'location_description' => 'required|string',
+            'full_names' => 'required|string',
+            'town' => 'required|string',
+            'phone_number' => 'required|digits:10|exists:collection_points',
+            'picture' => 'optional|image|mimes:jpeg,png,jpg|max:6048',
+        ]);
+
+        $station = CollectionPoint::findOrfail($id);
+        $station->location_description = $request->input('location_description');
+        $station->town = $request->input('town');
+        if ($request->hasFile('picture')) {
+            Storage::delete('public/collectionpoints/' . $station->picture);
+            $fileNameWithExt = $request->picture->getClientOriginalName();
+            $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $Extension = $request->picture->getClientOriginalExtension();
+            $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
+            $path = $request->picture->storeAs('collectionpoints', $filenameToStore, 'public');
+            $station->picture = $filenameToStore;
+        }
+        $station->phone_number = $request->input('phone_number');
+        $station->save();
+
+        $user = User::findOrFail($station->user_id);
+        $user->name = $request->input('full_names');
+        $user->email = $request->input('email');
+        $user->save();
+
+        Toastr::warning('Collection Point has been Edited.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->to('admin/all-collection-points');
     }
 }
