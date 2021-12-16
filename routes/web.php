@@ -64,6 +64,6 @@ Route::get('/collector/dashboard', [CollectionAccountController::class, 'index']
 Route::prefix('collector')->group(function (){
     Route::get('new-laundry', [CollectionAccountController::class, 'createlaundry']);
     Route::post('store-laundry', [CollectionAccountController::class, 'storelaundry']);
-    Route::post('received-order-payment/{order}', [CollectionAccountController::class, 'uploadpayment']);
+    Route::get('received-order-payment/{order}', [CollectionAccountController::class, 'uploadpayment']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html

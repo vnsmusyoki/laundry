@@ -54,13 +54,15 @@ class CollectionAccountController extends Controller
                 $price = 550;
             }
         }
-        $user = User::where('email', $request->input('email'));
+        $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
+
+        $user = User::where('email', $request->input('email'))->get()->first();
         $laundrylength = 6;
         $str = "1234567890";
         $laundryid = substr(str_shuffle($str), 0, $laundrylength);
         $laundry = new CustomerLaundry;
         $laundry->customer_id = $user->id;
-        $laundry->checkpoint_id = CollectionPoint::where('user_id', auth()->user()->id)->get('id');
+        $laundry->checkpoint_id =$point->id;
         $laundry->luggage_category = $request->input('luggage_category');
         $laundry->laundry_id  = "ORDER-" . $laundryid;
         $laundry->amount  = $price;
