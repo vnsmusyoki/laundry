@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminAccountController;
+use App\Http\Controllers\customer\CustomerAccountController;
 use App\Http\Controllers\PagesContentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,7 @@ Route::get('/services/plumbing-services', [PagesContentController::class, 'plumb
 Route::get('/services/car-washing', [PagesContentController::class, 'carwashing']);
 Route::get('/contact-us', [PagesContentController::class, 'contactus']);
 Route::get('/booking-service', [PagesContentController::class, 'bookingservice']);
+Route::post('/user-account', [PagesContentController::class, 'registeraccount']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [AdminAccountController::class, 'index'])->name('admin');
@@ -41,7 +43,7 @@ Route::prefix('admin')->group(function () {
     Route::patch('update-checkpoint/{point}', [AdminAccountController::class, 'updatecollectionpoint']);
     Route::get('delete-collection-point/{point}', [AdminAccountController::class, 'deletecollectionpoint']);
 });
-Route::get('/user/dashboard', [AdminAccountController::class, 'index'])->name('customer');
+Route::get('/user/dashboard', [CustomerAccountController::class, 'index'])->name('customer');
 Route::prefix('user')->group(function() {
 
 });

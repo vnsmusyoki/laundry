@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - Klear |Welcome back</title>
+    <title>Create Account - Klear |Welcome back</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
@@ -35,40 +35,49 @@
                                     <img width="120" src="{{ asset('backend/assets/images/logo.svg') }}" alt="logo">
                                 </div>
                                 <div class="my-5 text-center text-lg-start">
-                                    <h1 class="display-8">Sign In</h1>
-                                    <p class="text-muted">Sign in to Klear to continue</p>
+                                    <h1 class="display-8">Sign Up</h1>
+                                    <p class="text-muted">Sign Up to get Started </p>
                                 </div>
-                                <form class="mb-5" action="{{ route('login') }}" method="POST"
+                                <form class="mb-5" action="{{ url('user-account') }}" method="POST"
                                     autocomplete="off">
                                     @csrf
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Enter email" autofocus
-                                            required name="email">
-                                        @error('email')
+                                        <input type="text" class="form-control" placeholder="Enter Fullname" autofocus
+                                             name="full_name" value="{{ old('full_name') }}" style="text-transform: capitalize;">
+                                        @error('full_name')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <input type="password" name="password" class="form-control"
-                                            placeholder="Enter password" required name="password">
+                                        <input type="email" class="form-control" placeholder="Enter Email Address"
+                                            autofocus  name="email" value="{{ old('email') }}">
                                         @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="Enter password"  >
+                                        @error('password')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password"  class="form-control"
+                                            placeholder="Re-enter Password"  name="password_confirmation">
+                                        @error('password_confirmation')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="text-center text-lg-start">
 
-                                        @if (Route::has('password.request'))
 
-                                            <p class="small">Can't access your account? <a href="{{ route('password.request') }}">Reset your
-                                                password now</a>.</p>
-                                        @endif
-                                        <button class="btn btn-primary" type="submit">Sign In</button>
+                                        <button class="btn btn-primary" type="submit">Sign Up</button>
                                     </div>
                                 </form>
 
-                                <p class="text-center d-block d-lg-none mt-5 mt-lg-0">
-                                    Don't have an account? <a href="#">Sign up</a>.
-                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -76,13 +85,13 @@
                         class="col d-none d-lg-flex border-start align-items-center justify-content-between flex-column text-center">
                         <div class="logo">
 
-                                    <a href="{{ url('/')}}"><img  width="120" src="{{  asset('front-end/img/logo/logo.png') }}" alt="img"></a>
+                            <a href="{{ url('/') }}"><img width="120"
+                                    src="{{ asset('front-end/img/logo/logo.png') }}" alt="img"></a>
                         </div>
                         <div>
                             <h3 class="fw-bold">Welcome to Klear!</h3>
-                            <p class="lead my-5">If you don't have an account, would you like to register right
-                                now?</p>
-                            <a href="{{ route('register') }}" class="btn btn-primary">Sign Up</a>
+                            <p class="lead my-5">You already have an Account?</p>
+                            <a href="{{ route('login') }}" class="btn btn-primary">Sign In</a>
                         </div>
                         <ul class="list-inline">
 
