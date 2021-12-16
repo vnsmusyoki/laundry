@@ -32,4 +32,7 @@ Route::get('/contact-us', [PagesContentController::class, 'contactus']);
 Route::get('/booking-service', [PagesContentController::class, 'bookingservice']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- 
+Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
+
+
+// https://radixtouch.com/templates/admin/smart/source/light/index.html

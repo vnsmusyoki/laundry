@@ -69,7 +69,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo">
-                            <a href="index.html"><img src="{{  asset('front-end/img/logo/logo.png') }}" alt="img"></a>
+                            <a href="{{ url('/')}}"><img src="{{  asset('front-end/img/logo/logo.png') }}" alt="img"></a>
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-8">
@@ -80,12 +80,12 @@
                                     <li><a href="{{  url('about-us') }}">About</a></li>
                                     <li><a href="{{  url('services') }}">Services</a>
                                         <ul class="submenu">
-                                            <li><a href="{{ url('services/plumbing-services') }}">Plumbing Services</a></li> 
+                                            <li><a href="{{ url('services/plumbing-services') }}">Plumbing Services</a></li>
                                             <li><a href="{{  url('services/cleaning-services') }}">Cleaning Services</a></li>
                                             <li><a href="{{ url('services/car-washing') }}">Car Washing</a></li>
                                             <li><a href="{{ url('services/house-cleaning') }}">House Cleaning</a></li>
                                         </ul>
-                                    </li> 
+                                    </li>
                                     <li><a href="{{ url('contact-us') }}">Contact</a></li>
                                     <li><a href="{{ route('login') }}">My Account</a></li>
                                     <li><a href="{{ url('booking-service') }}">Book Us Today</a></li>
@@ -110,7 +110,7 @@
                             <ul>
                                 <li><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="{{ url('about-us') }}">About Us</a></li>
-                                <li><a href="{{ url('services/house-cleaning') }}">Services</a></li> 
+                                <li><a href="{{ url('services/house-cleaning') }}">Services</a></li>
                                 <li><a href="{{ url('booking-service') }}">Booking Service</a></li>
                                 <li><a href="{{ route('login') }}">My Account</a></li>
                                 <li><a href="{{  url('contact-us') }}">Contact</a></li>

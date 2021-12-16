@@ -51,8 +51,8 @@
                                 <h2>Modern Maintenance Inc. Has Been Delivering Results for 40 Years</h2>
                             </div>
                             <div class="s-about-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. eaque ipsa quae ab</p>
+                                <p>We are professionals in the laundry and dry cleaning business, which means we always stay up to date on the latest technologies, cleaning methods, and solutions for dealing with stains or delicate fabrics.</p>
+                                <p>Plus, we maintain the highest standards of business integrity by following local and national regulations and environmental safety rules. We are passionate about changing the way you think about laundry!</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
                         </div>
@@ -152,8 +152,7 @@
                             </div>
                             <div class="t-services-content">
                                 <h4><img src="{{ asset('front-end/img/icon/ts_icon01.png') }}" alt="img"> Plumbing Service</h4>
-                                <p>Lorem ipsum dolor sit consectetuadipisi cing elit sed do eiusmot empor</p>
-                                <a href="#" class="btn">Read More</a>
+
                             </div>
                         </div>
                     </div>
@@ -164,8 +163,7 @@
                             </div>
                             <div class="t-services-content">
                                 <h4><img src="{{ asset('front-end/img/icon/ts_icon02.png') }}" alt="img"> Car Washing</h4>
-                                <p>Lorem ipsum dolor sit consectetuadipisi cing elit sed do eiusmot empor</p>
-                                <a href="#" class="btn">Read More</a>
+
                             </div>
                         </div>
                     </div>
@@ -188,8 +186,7 @@
                             </div>
                             <div class="t-services-content">
                                 <h4><img src="{{ asset('front-end/img/icon/ts_icon04.png') }}" alt="img"> Carpet Cleaning</h4>
-                                <p>Lorem ipsum dolor sit consectetuadipisi cing elit sed do eiusmot empor</p>
-                                <a href="#" class="btn">Read More</a>
+
                             </div>
                         </div>
                     </div>
@@ -200,8 +197,7 @@
                             </div>
                             <div class="t-services-content">
                                 <h4><img src="{{ asset('front-end/img/icon/ts_icon05.png') }}" alt="img"> House Cleaning</h4>
-                                <p>Lorem ipsum dolor sit consectetuadipisi cing elit sed do eiusmot empor</p>
-                                <a href="#" class="btn">Read More</a>
+
                             </div>
                         </div>
                     </div>
@@ -212,8 +208,7 @@
                             </div>
                             <div class="t-services-content">
                                 <h4><img src="{{ asset('front-end/img/icon/ts_icon06.png') }}" alt="img"> Window Cleaning</h4>
-                                <p>Lorem ipsum dolor sit consectetuadipisi cing elit sed do eiusmot empor</p>
-                                <a href="#" class="btn">Read More</a>
+
                             </div>
                         </div>
                     </div>
@@ -240,7 +235,7 @@
                                 <i class="fal fa-location"></i>
                             </div>
                             <div class="fact-count">
-                                <h2 class="count">2540</h2>
+                                <h2 class="count">20</h2>
                                 <span>Project Complate</span>
                             </div>
                         </div>
@@ -252,7 +247,7 @@
                                 <i class="fal fa-heart"></i>
                             </div>
                             <div class="fact-count">
-                                <h2 class="count">3652</h2>
+                                <h2 class="count">32</h2>
                                 <span>Satisfied Clients</span>
                             </div>
                         </div>
@@ -264,7 +259,7 @@
                                 <i class="fal fa-trophy"></i>
                             </div>
                             <div class="fact-count">
-                                <h2 class="count">8640</h2>
+                                <h2 class="count">80</h2>
                                 <span>Win Awards</span>
                             </div>
                         </div>
@@ -276,7 +271,7 @@
                                 <i class="fal fa-shield-check"></i>
                             </div>
                             <div class="fact-count">
-                                <h2 class="count">6985</h2>
+                                <h2 class="count">65</h2>
                                 <span>Win Awards</span>
                             </div>
                         </div>
@@ -726,7 +721,7 @@
                                 </div>
                             </div>
                             <div class="t-testimonial-content">
-                                <p>Lorem ipsum dolor sit amconsectetur adipisicing elit sed do eiuincididunt ut labore et dolore magna aliqua. Uenim ad minim veniam quis noexercitation ullamco laboris nisi ut aliquip exea commodo consequat auteqe.</p>
+                                <p>We have been associated with Laundris Laundry Service for almost a year and in short have been extremely pleased. Their service has been excellent and the entire organization is dedicated towards professionalism..</p>
                                 <i class="fal fa-quote-right"></i>
                             </div>
                         </div>
@@ -739,7 +734,7 @@
                                 </div>
                                 <div class="t-client-name third-c-name fix">
                                     <h5>Pardeshi Sine</h5>
-                                    <span>Web Designer</span>
+
                                     <div class="t-client-review">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -750,7 +745,7 @@
                                 </div>
                             </div>
                             <div class="t-testimonial-content">
-                                <p>Lorem ipsum dolor sit amconsectetur adipisicing elit sed do eiuincididunt ut labore et dolore magna aliqua. Uenim ad minim veniam quis noexercitation ullamco laboris nisi ut aliquip exea commodo consequat auteqe.</p>
+                                <p>The new machines have had very few problems and their services are always done in a timely fashion. Our residents have been thrilled with the Laundris team and we look forward to a long relationship with this first-class organization.</p>
                                 <i class="fal fa-quote-right"></i>
                             </div>
                         </div>
@@ -774,7 +769,7 @@
                                 </div>
                             </div>
                             <div class="t-testimonial-content">
-                                <p>Lorem ipsum dolor sit amconsectetur adipisicing elit sed do eiuincididunt ut labore et dolore magna aliqua. Uenim ad minim veniam quis noexercitation ullamco laboris nisi ut aliquip exea commodo consequat auteqe.</p>
+                                <p>Over the last eight years they have proven, on several occasions that they are knowledgeable, prompt, and concerned about my immediate situation. I personally encourage any business associated with their laundry services.</p>
                                 <i class="fal fa-quote-right"></i>
                             </div>
                         </div>
@@ -787,7 +782,7 @@
                                 </div>
                                 <div class="t-client-name third-c-name fix">
                                     <h5>Frank Sokla</h5>
-                                    <span>Web Developer</span>
+
                                     <div class="t-client-review">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -798,7 +793,7 @@
                                 </div>
                             </div>
                             <div class="t-testimonial-content">
-                                <p>Lorem ipsum dolor sit amconsectetur adipisicing elit sed do eiuincididunt ut labore et dolore magna aliqua. Uenim ad minim veniam quis noexercitation ullamco laboris nisi ut aliquip exea commodo consequat auteqe.</p>
+                                <p>We have been associated with Laundris Laundry Service for almost a year and in short have been extremely pleased. Their service has been excellent and the entire organization is dedicated towards professionalism..</p>
                                 <i class="fal fa-quote-right"></i>
                             </div>
                         </div>
@@ -822,7 +817,7 @@
                                 </div>
                             </div>
                             <div class="t-testimonial-content">
-                                <p>Lorem ipsum dolor sit amconsectetur adipisicing elit sed do eiuincididunt ut labore et dolore magna aliqua. Uenim ad minim veniam quis noexercitation ullamco laboris nisi ut aliquip exea commodo consequat auteqe.</p>
+                                <p>Over the last eight years they have proven, on several occasions that they are knowledgeable, prompt, and concerned about my immediate situation. I personally encourage any business associated with their laundry services..</p>
                                 <i class="fal fa-quote-right"></i>
                             </div>
                         </div>
@@ -846,7 +841,7 @@
                                 </div>
                             </div>
                             <div class="t-testimonial-content">
-                                <p>Lorem ipsum dolor sit amconsectetur adipisicing elit sed do eiuincididunt ut labore et dolore magna aliqua. Uenim ad minim veniam quis noexercitation ullamco laboris nisi ut aliquip exea commodo consequat auteqe.</p>
+                                <p>The new machines have had very few problems and their services are always done in a timely fashion. Our residents have been thrilled with the Laundris team and we look forward to a long relationship with this first-class organization.</p>
                                 <i class="fal fa-quote-right"></i>
                             </div>
                         </div>
@@ -855,110 +850,5 @@
             </div>
         </section>
         <!-- testimonial-area-end -->
-        <!-- blog-area -->
-        <section class="blog-area gray-bg pt-115 pb-70">
-            <div class="container">
-                <div class="row align-items-center mb-70">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="side-title">
-                            <span class="title-line"></span>
-                            <span>Our Blog</span>
-                            <h2>The Stories Of Challenges For Build Our Success</h2>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-4 d-none d-lg-block">
-                        <div class="b-ittle-btn text-right">
-                            <a href="#" class="btn">See All Blog</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-post tb-single-post mb-50">
-                            <div class="tb-post-thumb">
-                                <a href="#"><img src="{{ asset('front-end/img/blog/t_blog01.jpg') }}" alt="img"></a>
-                            </div>
-                            <div class="tb-wrap">
-                                <div class="tb-post-meta mb-10">
-                                    <ul>
-                                        <li><a href="#" class="blue">house cleaning</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tb-post-content">
-                                    <h4><a href="blog-details.html">How To Iterate Your Way
-                                        To A Winning Content Driven Website</a></h4>
-                                    <p>Lorem ipsum dolor sit ame consectetur adipisicing elit sed do eiusmodn cididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="tb-post-avatar mt-20">
-                                        <div class="tb-avatar-img">
-                                            <img src="{{ asset('front-end/img/blog/tb_post_avatar01.png') }}" alt="img">
-                                        </div>
-                                        <div class="tb-avatar-info fix">
-                                            <h5>David Watson</h5>
-                                            <span>Web Developer</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-post tb-single-post mb-50">
-                            <div class="tb-post-thumb">
-                                <a href="#"><img src="{{ asset('front-end/img/blog/t_blog02.jpg') }}" alt="img"></a>
-                            </div>
-                            <div class="tb-wrap">
-                                <div class="tb-post-meta mb-10">
-                                    <ul>
-                                        <li><a href="#" class="green">house cleaning</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tb-post-content">
-                                    <h4><a href="blog-details.html">Using Design Workouts
-                                        To Build World-Class Design Teams</a></h4>
-                                    <p>Lorem ipsum dolor sit ame consectetur adipisicing elit sed do eiusmodn cididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="tb-post-avatar mt-20">
-                                        <div class="tb-avatar-img">
-                                            <img src="{{ asset('front-end/img/blog/tb_post_avatar02.png') }}" alt="img">
-                                        </div>
-                                        <div class="tb-avatar-info fix">
-                                            <h5>Angel Miken</h5>
-                                            <span>Founder</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-post tb-single-post mb-50">
-                            <div class="tb-post-thumb">
-                                <a href="#"><img src="{{ asset('front-end/img/blog/t_blog03.jpg') }}" alt="img"></a>
-                            </div>
-                            <div class="tb-wrap">
-                                <div class="tb-post-meta mb-10">
-                                    <ul>
-                                        <li><a href="#" class="yellow">house cleaning</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tb-post-content">
-                                    <h4><a href="blog-details.html">Introduction To Autom
-                                        Ated Testing WordPress Plugins With PHP</a></h4>
-                                    <p>Lorem ipsum dolor sit ame consectetur adipisicing elit sed do eiusmodn cididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="tb-post-avatar mt-20">
-                                        <div class="tb-avatar-img">
-                                            <img src="{{ asset('front-end/img/blog/tb_post_avatar03.png') }}" alt="img">
-                                        </div>
-                                        <div class="tb-avatar-info fix">
-                                            <h5>Raydu Rossow</h5>
-                                            <span>Graphic Designer</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- blog-area-end -->
+     
 @endsection
