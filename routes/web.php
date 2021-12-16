@@ -44,7 +44,8 @@ Route::prefix('admin')->group(function () {
     Route::get('delete-collection-point/{point}', [AdminAccountController::class, 'deletecollectionpoint']);
 });
 Route::get('/user/dashboard', [CustomerAccountController::class, 'index'])->name('customer');
-Route::prefix('user')->group(function() {
-Route::get('new-laundry', [CustomerAccountController::class, 'newlaundry']);
+Route::prefix('user')->group(function () {
+    Route::get('new-laundry', [CustomerAccountController::class, 'newlaundry']);
+    Route::post('store-laundry', [CustomerAccountController::class, 'storelaundry']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html
