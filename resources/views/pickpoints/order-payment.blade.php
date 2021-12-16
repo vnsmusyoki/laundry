@@ -42,13 +42,19 @@
                         <h6 class="card-title mb-3">Billing</h6>
                         <div class="text-muted">Enter your Transaction Code below after payment</div>
                     </div>
-                    <form action="">
+                    <form action="{{ url('collector/store-payments/' . $order->id) }}" method="POST" autocomplete="off">
+                        @method('PATCH')
+                        @csrf
                         <div class="row g-4 mb-3">
                             <div class="col-md-12">
                                 <label class="form-label">Transaction Code</label>
                                 <input type="text" class="form-control" name="transaction_code"
                                     value="{{ old('transaction_code') }}"
-                                    placeholder="PAY EXACTLY KSHS. {{ $order->amount }}" style="color: darkslategrey;letter-spacing:2px;text-transform:uppercase;">
+                                    placeholder="PAY EXACTLY KSHS. {{ $order->amount }}"
+                                    style="color: darkslategrey;letter-spacing:2px;text-transform:uppercase;">
+                                @error('transaction_code')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-success mb-5">Submit Payment Code Now</button>
                         </div>

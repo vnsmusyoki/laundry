@@ -8,6 +8,7 @@ use App\Models\CustomerLaundry;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+
 class CollectionAccountController extends Controller
 {
     public function index()
@@ -62,7 +63,7 @@ class CollectionAccountController extends Controller
         $laundryid = substr(str_shuffle($str), 0, $laundrylength);
         $laundry = new CustomerLaundry;
         $laundry->customer_id = $user->id;
-        $laundry->checkpoint_id =$point->id;
+        $laundry->checkpoint_id = $point->id;
         $laundry->luggage_category = $request->input('luggage_category');
         $laundry->laundry_id  = "ORDER-" . $laundryid;
         $laundry->amount  = $price;
@@ -80,10 +81,29 @@ class CollectionAccountController extends Controller
 
 
         Toastr::warning('Order has been Placed.', 'Success', ["positionClass" => "toast-top-right"]);
-        return redirect()->to('collector/received-order-payment/'.$laundry->id);
+        return redirect()->to('collector/received-order-payment/' . $laundry->id);
     }
-    public function uploadpayment($order){
+    public function uploadpayment($order)
+    {
         $order = CustomerLaundry::findOrFail($order);
         return view('pickpoints.order-payment', compact('order'));
+    }
+    public function updatepayment(Request $request, $order)
+    {
+
+        $this->validate($request, [
+            'transaction_code' => 'required|string|min:10|max:10|unique:customer_laundries'
+        ]);
+        $order = CustomerLaundry::findOrFail($order);
+        $order->transaction_code = $request->input('transaction_code');
+        $order->payment_status = "Pending";
+        $order->save();
+        Toastr::warning('Order payment has been received.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->to('collector/all-paid-orders');
+    }
+    public function paidorders(){
+        $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
+        $orders = CustomerLaundry::where('checkpoint_id', $point->id)->get();
+        return view('pickpoints.all-orders', compact('orders'));
     }
 }
