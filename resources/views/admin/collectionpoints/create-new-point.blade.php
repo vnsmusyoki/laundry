@@ -29,6 +29,13 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div class="form-group mb-4">
+                            <label for="">Collection Point Name </label>
+                            <input type="text" class="form-control" name="collection_name" value="{{ old('collection_name') }}">
+                            @error('collection_name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
                         <div class="row">
                             <div class="form-group mb-4 col-lg-6">
                                 <label for="">Collection Point Manager</label>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminAccountController;
 use App\Http\Controllers\customer\CustomerAccountController;
 use App\Http\Controllers\PagesContentController;
+use App\Http\Controllers\pickpoint\CollectionAccountController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -59,4 +60,5 @@ Route::prefix('user')->group(function () {
     Route::post('update-email', [CustomerAccountController::class, 'updateemail']);
     Route::post('update-picture', [CustomerAccountController::class, 'updateavatar']);
 });
+Route::get('/collector/dashboard', [CollectionAccountController::class, 'index'])->name('collector');
 // https://radixtouch.com/templates/admin/smart/source/light/index.html

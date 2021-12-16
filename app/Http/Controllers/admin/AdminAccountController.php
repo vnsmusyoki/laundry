@@ -31,6 +31,7 @@ class AdminAccountController extends Controller
             'email' => 'required|email|unique:users',
             'location_description' => 'required|string',
             'full_names' => 'required|string',
+            'collection_name' => 'required|string',
             'town' => 'required|string',
             'phone_number' => 'required|digits:10|unique:collection_points',
             'picture' => 'required|image|mimes:jpeg,png,jpg|max:6048',
@@ -52,6 +53,7 @@ class AdminAccountController extends Controller
         $station = new CollectionPoint;
         $station->location_description = $request->input('location_description');
         $station->town = $request->input('town');
+        $station->collection_name = $request->input('collection_name');
         $station->user_id = $user->id;
         $station->phone_number = $request->input('phone_number');
         $fileNameWithExt = $request->picture->getClientOriginalName();
