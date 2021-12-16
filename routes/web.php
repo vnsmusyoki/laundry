@@ -61,4 +61,9 @@ Route::prefix('user')->group(function () {
     Route::post('update-picture', [CustomerAccountController::class, 'updateavatar']);
 });
 Route::get('/collector/dashboard', [CollectionAccountController::class, 'index'])->name('collector');
+Route::prefix('collector')->group(function (){
+    Route::get('new-laundry', [CollectionAccountController::class, 'createlaundry']);
+    Route::post('store-laundry', [CollectionAccountController::class, 'storelaundry']);
+    Route::post('received-order-payment/{order}', [CollectionAccountController::class, 'uploadpayment']);
+});
 // https://radixtouch.com/templates/admin/smart/source/light/index.html

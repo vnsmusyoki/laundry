@@ -10,7 +10,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
 
-    
+
     <link rel="stylesheet" href="{{ asset('backend/dist/icons/bootstrap-icons-1.4.0/bootstrap-icons.min.css') }}"
         type="text/css">
     <!-- Bootstrap Docs -->
@@ -29,11 +29,11 @@
     <!-- menu -->
     <div class="menu">
         <div class="menu-header">
-            <a href="{{ route('customer') }}" class="menu-header-logo">
+            <a href="{{ route('collector') }}" class="menu-header-logo">
                 <img src="{{ asset('front-end/img/logo/logo.png') }}" alt="img">
             </a>
 
-            <a href="{{ route('customer') }}" class="btn btn-sm menu-close-btn">
+            <a href="{{ route('collector') }}" class="btn btn-sm menu-close-btn">
                 <i class="bi bi-x"></i>
             </a>
         </div>
@@ -52,21 +52,21 @@
                     </div>
                     <div>
                         <div class="fw-bold">{{ Auth::user()->name }}</div>
-                        <small class="text-muted">Customer Dashboard</small>
+                        <small class="text-muted">Collector Dashboard</small>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a href="{{ url('user/account-security') }}" class="dropdown-item d-flex align-items-center">
+                    <a href="{{ url('collector/account-security') }}" class="dropdown-item d-flex align-items-center">
                         <i class="bi bi-person dropdown-item-icon"></i> Profile
                     </a>
-                    <a href="{{ url('user/account-security') }}" class="dropdown-item d-flex align-items-center">
+                    <a href="{{ url('collector/account-security') }}" class="dropdown-item d-flex align-items-center">
                         <i class="bi bi-envelope dropdown-item-icon"></i> Profile Avatar
                     </a>
-                    <a href="{{ url('user/account-security') }}" class="dropdown-item d-flex align-items-center"
+                    <a href="{{ url('collector/account-security') }}" class="dropdown-item d-flex align-items-center"
                         data-sidebar-target="#settings">
                         <i class="bi bi-gear dropdown-item-icon"></i> Update Email
                     </a>
-                    <a href="{{ url('user/account-security') }}"
+                    <a href="{{ url('collector/account-security') }}"
                         class="dropdown-item d-flex align-items-center text-danger">
                         <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Update Password
                     </a>
@@ -84,7 +84,7 @@
             </div>
             <ul>
                 <li>
-                    <a href="{{ route('customer') }}">
+                    <a href="{{ route('collector') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-bar-chart"></i>
                         </span>
@@ -92,7 +92,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('user/new-laundry') }}">
+                    <a href="{{ url('collector/new-laundry') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-receipt"></i>
                         </span>
@@ -104,7 +104,7 @@
                         <span class="nav-link-icon">
                             <i class="bi bi-truck"></i>
                         </span>
-                        <span>All Pending Orders</span>
+                        <span>All Waiting Orders</span>
                     </a>
                 </li>
                 <li>

@@ -44,8 +44,8 @@
                         alt="...">
                 </div>
                 <div class="my-4 my-md-0">
-                    <h3 class="mb-1">Wendell Dikes</h3>
-                    <small>Buyer</small>
+                    <h3 class="mb-1">{{ Auth::user()->name}}</h3>
+                    <small>Collector Dashboard</small>
                 </div>
                 <div class="ms-md-auto">
                     <a href="{{ url('collector/account-security') }}" class="btn btn-primary btn-lg btn-icon">
