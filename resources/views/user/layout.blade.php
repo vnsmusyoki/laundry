@@ -11,8 +11,8 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
 
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    {{-- <link rel="preconnect" href="https://fonts.gstatic.com"> --}}
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> --}}
 
     <link rel="stylesheet" href="{{ asset('backend/dist/icons/bootstrap-icons-1.4.0/bootstrap-icons.min.css') }}"
         type="text/css">
@@ -33,8 +33,7 @@
     <div class="menu">
         <div class="menu-header">
             <a href="{{ route('customer') }}" class="menu-header-logo">
-                <img
-                src="{{ asset('front-end/img/logo/logo.png') }}" alt="img">
+                <img src="{{ asset('front-end/img/logo/logo.png') }}" alt="img">
             </a>
 
             <a href="{{ route('customer') }}" class="btn btn-sm menu-close-btn">
@@ -98,7 +97,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('customer') }}">
+                    <a href="{{ url('user/all-pending-orders') }}">
+                        <span class="nav-link-icon">
+                            <i class="bi bi-truck"></i>
+                        </span>
+                        <span>All Pending Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('user/all-orders') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-truck"></i>
                         </span>
@@ -106,7 +113,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('customer') }}">
+                    <a href="{{ url('user/all-transactions') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-wallet2"></i>
                         </span>
@@ -114,7 +121,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./customers.html">
+                    <a href="{{ url('user/pending-laundries')}}">
                         <span class="nav-link-icon">
                             <i class="bi bi-person-badge"></i>
                         </span>

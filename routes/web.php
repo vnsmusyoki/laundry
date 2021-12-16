@@ -48,6 +48,11 @@ Route::prefix('user')->group(function () {
     Route::get('new-laundry', [CustomerAccountController::class, 'newlaundry']);
     Route::post('store-laundry', [CustomerAccountController::class, 'storelaundry']);
     Route::get('all-pending-orders', [CustomerAccountController::class, 'pendingorders']);
+    Route::get('all-orders', [CustomerAccountController::class, 'allorders']);
     Route::get('edit-pending-order/{order}', [CustomerAccountController::class, 'editpendingorder']);
+    Route::get('delete-pending-order/{order}', [CustomerAccountController::class, 'deletependingorder']);
+    Route::patch('update-laundry/{order}', [CustomerAccountController::class, 'updatependingorder']);
+    Route::get('all-transactions', [CustomerAccountController::class, 'alltransactions']);
+    Route::get('pending-laundries', [CustomerAccountController::class, 'pendinglaundries']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html

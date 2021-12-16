@@ -38,7 +38,7 @@
             <div class="card widget h-100">
                 <div class="card-header d-flex">
                     <h6 class="card-title">
-                        Create New Laundry
+                        Edit Pending Laundry
                         <a href="#" class="bi bi-question-circle ms-1 small"></a>
                     </h6>
                     <div class="d-flex gap-3 align-items-center ms-auto">
@@ -52,9 +52,10 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('user/store-laundry') }}" method="POST" autocomplete="off"
+                    <form action="{{ url('user/update-laundry/'.$order->id) }}" method="POST" autocomplete="off"
                         enctype="multipart/form-data">
                         @csrf
+                        @method('PATCH')
                         <div class="form-group mb-4">
                             <label for="">Luggage Picture </label>
                             <input type="file" class="form-control" name="picture" value="{{ old('picture') }}">
@@ -66,6 +67,7 @@
                             <div class="form-group mb-4 col-lg-6">
                                 <label for="">Collection Point</label>
                                 <select name="collection_point" id="" class="form-control">
+                                    <option value="">selected {{ $order->laundrycheckpoint->collection_name }}</option>
                                     <option value="">select Nearest Location</option>
                                     @foreach ($points as $point)
                                         <option value="{{ $point->id }}">{{ $point->collection_name }}
@@ -80,6 +82,7 @@
                                 <div class="form-group">
                                     <label for="">Luggage Category</label>
                                     <select name="luggage_category" id="" class="form-control">
+                                        <option value="">selected {{ $order->luggage_category }}</option>
                                         <option value="">select Luggage Category</option>
                                         <option value="Clothes">Clothes</option>
                                         <option value="Dresses">Dresses</option>
@@ -99,6 +102,7 @@
                                 <div class="form-group">
                                     <label for="">Number of Pieces</label>
                                     <select name="number_of_pieces" id="" class="form-control">
+                                        <option value="">selected {{ $order->number_of_pieces }}</option>
                                         <option value="">select Luggage Pieces</option>
                                         <option value="Less than 10">Less than 10 Pieces</option>
                                         <option value="Between 10  and 30">Between 10 and 30 Pieces</option>
@@ -116,12 +120,13 @@
                         <div class="form-group mb-4">
                             <label for="">Additional Description</label>
                             <textarea name="additional_description" id="" cols="30" class="form-control"
-                                rows="10">{{ old('additional_description') }}</textarea>
+                                rows="10">{{ $order->additional_description }}</textarea>
                             @error('additional_description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <button type="submit" class="btn btn-danger">Upload Laundry</button>
+                        <a href="{{ url('user/delete-pending-order/'.$order->id) }}" class="btn btn-success">Delete order</a>
                     </form>
                 </div>
             </div>

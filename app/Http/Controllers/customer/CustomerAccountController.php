@@ -8,6 +8,7 @@ use App\Models\CustomerLaundry;
 use Illuminate\Http\Request;
 
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Storage;
 
 class CustomerAccountController extends Controller
 {
@@ -91,5 +92,88 @@ class CustomerAccountController extends Controller
         $order = CustomerLaundry::findOrFail($order);
         $points = CollectionPoint::all();
         return view('user.edit-pending-order', compact('order', 'points'));
+    }
+    public function deletependingorder($order)
+    {
+        $laundry = CustomerLaundry::findOrFail($order);
+        Storage::delete('public/laundry/' . $laundry->picture);
+        $laundry->delete();
+        Toastr::error('Order has been Deleted.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->to('user/all-pending-orders');
+    }
+    public function updatependingorder(Request $request, $order)
+    {
+        $this->validate($request, [
+            'collection_point' => 'required',
+            'luggage_category' => 'required|string',
+            'number_of_pieces' => 'required|string',
+            'additional_description' => 'required|string',
+            'picture' => 'optional|image|mimes:jpeg,png,jpg|max:6048',
+        ]);
+
+        $category = $request->input('luggage_category');
+        $pieces = $request->input('number_of_pieces');
+        if ($category == "Clothes") {
+            if ($pieces == "Less than 10") {
+                $price = 100;
+            } else if ($pieces == "Between 10  and 30") {
+                $price = 200;
+            } else if ($pieces == "Between 30  and 50") {
+                $price = 300;
+            } else {
+                $price = 500;
+            }
+        } else {
+            if ($pieces == "Less than 10") {
+                $price = 150;
+            } else if ($pieces == "Between 10  and 30") {
+                $price = 250;
+            } else if ($pieces == "Between 30  and 50") {
+                $price = 350;
+            } else {
+                $price = 550;
+            }
+        }
+
+        $laundry = CustomerLaundry::findOrFail($order);
+        $laundry->checkpoint_id = $request->input('collection_point');
+        $laundry->luggage_category = $request->input('luggage_category');
+        $laundry->amount  = $price;
+        $laundry->luggage_category = $request->input('luggage_category');
+        $laundry->additional_description = $request->input('luggage_category');
+        if ($request->hasFile('picture')) {
+            Storage::delete('public/laundry/' . $laundry->picture);
+            $fileNameWithExt = $request->picture->getClientOriginalName();
+            $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $Extension = $request->picture->getClientOriginalExtension();
+            $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
+            $path = $request->picture->storeAs('laundry', $filenameToStore, 'public');
+            $laundry->picture = $filenameToStore;
+        }
+        $laundry->number_of_pieces = $request->input('number_of_pieces');
+        $laundry->collection_status = "Waiting";
+        $laundry->save();
+
+
+        Toastr::warning('Order has been Edited.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->to('user/all-pending-orders');
+    }
+    public function allorders()
+    {
+        $orders = CustomerLaundry::where('customer_id',auth()->user()->id)->get();
+
+        return view('user.all-orders', compact('orders'));
+    }
+    public function alltransactions()
+    {
+        $orders = CustomerLaundry::where('customer_id',auth()->user()->id)->get();
+
+        return view('user.all-transactions', compact('orders'));
+    }
+    public function pendinglaundries()
+    {
+        $orders = CustomerLaundry::where(['customer_id'=>auth()->user()->id, 'delivery_status'=>'Waiting'])->get();
+
+        return view('user.pending-laundries', compact('orders'));
     }
 }

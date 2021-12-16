@@ -15,4 +15,5 @@ class CustomerLaundry extends Model
     public function laundrycheckpoint(){
         return $this->belongsTo(CollectionPoint::class, 'checkpoint_id', 'id');
     }
+
 }
