@@ -44,8 +44,14 @@
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center" data-bs-toggle="dropdown">
                     <div class="avatar me-3">
+
+                        @if (Auth::user()->picture == null)
                         <img src="{{ asset('backend/assets/images/user/man_avatar3.jpg') }}" class="rounded-circle"
-                            alt="image">
+                        alt="image">
+                        @else
+                            <img src="{{ asset('storage/profiles/' . Auth()->user()->picture) }}"
+                                class="rounded-circle">
+                        @endif
                     </div>
                     <div>
                         <div class="fw-bold">{{ Auth::user()->name }}</div>
@@ -121,7 +127,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('user/pending-laundries')}}">
+                    <a href="{{ url('user/pending-laundries') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-person-badge"></i>
                         </span>

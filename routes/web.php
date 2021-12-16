@@ -54,5 +54,9 @@ Route::prefix('user')->group(function () {
     Route::patch('update-laundry/{order}', [CustomerAccountController::class, 'updatependingorder']);
     Route::get('all-transactions', [CustomerAccountController::class, 'alltransactions']);
     Route::get('pending-laundries', [CustomerAccountController::class, 'pendinglaundries']);
+    Route::get('account-security', [CustomerAccountController::class, 'accountsecurity']);
+    Route::post('update-password', [CustomerAccountController::class, 'updatepassword']);
+    Route::post('update-email', [CustomerAccountController::class, 'updateemail']);
+    Route::post('update-picture', [CustomerAccountController::class, 'updateavatar']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html
