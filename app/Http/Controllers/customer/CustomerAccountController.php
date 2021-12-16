@@ -79,4 +79,9 @@ class CustomerAccountController extends Controller
         Toastr::warning('Order has been Placed.', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->to('user/all-pending-orders');
     }
+    public function pendingorders()
+    {
+        $orders = CustomerLaundry::where(['customer_id' => auth()->user()->id, 'collection_status' => 'Waiting'])->get();
+        return view('user.pending-orders', compact('orders'));
+    }
 }

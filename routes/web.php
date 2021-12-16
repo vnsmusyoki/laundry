@@ -47,5 +47,6 @@ Route::get('/user/dashboard', [CustomerAccountController::class, 'index'])->name
 Route::prefix('user')->group(function () {
     Route::get('new-laundry', [CustomerAccountController::class, 'newlaundry']);
     Route::post('store-laundry', [CustomerAccountController::class, 'storelaundry']);
+    Route::get('all-pending-orders', [CustomerAccountController::class, 'pendingorders']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html
