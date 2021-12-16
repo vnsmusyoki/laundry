@@ -11,4 +11,8 @@ class CustomerAccountController extends Controller
     {
         return view('user.dashboard');
     }
+    public function newlaundry()
+    {
+        return view('user.new-laundry');
+    }
 }

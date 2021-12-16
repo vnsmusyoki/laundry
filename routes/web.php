@@ -45,6 +45,6 @@ Route::prefix('admin')->group(function () {
 });
 Route::get('/user/dashboard', [CustomerAccountController::class, 'index'])->name('customer');
 Route::prefix('user')->group(function() {
-
+Route::get('new-laundry', [CustomerAccountController::class, 'newlaundry']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html
