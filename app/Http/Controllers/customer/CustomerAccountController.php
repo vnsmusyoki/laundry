@@ -59,7 +59,8 @@ class CustomerAccountController extends Controller
         $str = "1234567890";
         $laundryid = substr(str_shuffle($str), 0, $laundrylength);
         $laundry = new CustomerLaundry;
-        $laundry->collection_point = $request->input('collection_point');
+        $laundry->customer_id = auth()->user()->id;
+        $laundry->checkpoint_id = $request->input('collection_point');
         $laundry->luggage_category = $request->input('luggage_category');
         $laundry->laundry_id  = "ORDER-" . $laundryid;
         $laundry->amount  = $price;
@@ -82,6 +83,13 @@ class CustomerAccountController extends Controller
     public function pendingorders()
     {
         $orders = CustomerLaundry::where(['customer_id' => auth()->user()->id, 'collection_status' => 'Waiting'])->get();
+
         return view('user.pending-orders', compact('orders'));
+    }
+    public function editpendingorder($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+        $points = CollectionPoint::all();
+        return view('user.edit-pending-order', compact('order', 'points'));
     }
 }

@@ -23,12 +23,12 @@ class CreateCustomerLaundriesTable extends Migration
             $table->longText('additional_description');
             $table->string('picture');
             $table->string('amount');
-            $table->string('transaction_code');
+            $table->string('transaction_code')->nullable();
             $table->string('payment_status')->nullable();
             $table->string('laundry_status')->nullable();
             $table->string('collection_status')->nullable();
             $table->string('delivery_status')->nullable();
-            $table->timestamp('pickup_date');
+            $table->timestamp('pickup_date')->nullable();
             $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('checkpoint_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

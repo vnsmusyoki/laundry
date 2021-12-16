@@ -9,7 +9,7 @@ class CollectionPoint extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'phone_number','town', 'picture', 'location_description'];
+    protected $fillable = ['user_id', 'phone_number','town', 'picture','collection_name', 'location_description'];
     public function checkpointmanager()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');

@@ -63,31 +63,32 @@
                 <tr>
                     <th>ID</th>
                     <th>Picture</th>
-                    <th>Manager</th>
-                    <th>Phone Number</th>
-                    <th>Email Address</th>
-                    <th>Town</th>
-                    <th>Date Added</th>
+                    <th>Order ID</th>
+                    <th>Amount</th>
+                    <th>Date Uploaded</th>
+                    <th>Collection Point</th>
+                    <th>Category</th>
+                    <th>No. of Pieces</th>
                     <th class="text-end">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @if ($points->count() >= 1)
-                    @foreach ($points as $key => $point)
+                @if ($orders->count() >= 1)
+                    @foreach ($orders as $key => $order)
                         <tr>
                             <td>
                                 {{ ++$key }}
                             </td>
                             <td>
-                                <img src="{{ asset('storage/collectionpoints/' . $point->picture) }}" alt=""
+                                <img src="{{ asset('storage/laundry/' . $order->picture) }}" alt=""
                                     style="height: 50px;width:50px;border-radius:5px;">
                             </td>
-                            <td>{{ $point->checkpointmanager->name }}</td>
-                            <td>{{ $point->phone_number }}</td>
-                            <td>{{ $point->checkpointmanager->email }}</td>
-                            <td>{{ $point->town }}</td>
-                            <td>{{ $point->created_at->addHours(3)->format('l,d-m-y, h:i:s a') }}</td>
-
+                            <td>{{ $order->laundry_id }}</td>
+                            <td>Kshs. {{ $order->amount }}</td>
+                            <td>{{ $order->created_at->addHours(3)->format('l,d-m-y, h:i:s a') }}</td>
+                            <td>{{ $order->laundrycheckpoint->collection_name }}</td>
+                            <td>{{ $order->luggage_category }}</td>
+                            <td>{{ $order->number_of_pieces }}</td>
                             <td class="text-end">
                                 <div class="d-flex">
                                     <div class="dropdown ms-auto">
@@ -96,11 +97,10 @@
                                             <i class="bi bi-three-dots"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="{{ url('admin/show-collection-point/' . $point->id) }}"
-                                                class="dropdown-item">Show</a>
-                                            <a href="{{ url('admin/edit-collection-point/' . $point->id) }}"
+
+                                            <a href="{{ url('user/edit-pending-order/' . $order->id) }}"
                                                 class="dropdown-item">Edit</a>
-                                            <a href="{{ url('admin/delete-collection-point/' . $point->id) }}"
+                                            <a href="{{ url('user/delete-pending-order/' . $order->id) }}"
                                                 class="dropdown-item">Delete</a>
                                         </div>
                                     </div>
@@ -110,7 +110,7 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="5">
+                        <td colspan="9">
                             <center>No Collection Points added</center>
                         </td>
                     </tr>
