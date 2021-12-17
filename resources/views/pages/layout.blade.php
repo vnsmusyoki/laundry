@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Klear - Cleaning Service Company HTML5 Template</title>
+    <title>Klear - Laundry Cleaning Ltd</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,14 +28,7 @@
 
 <body>
 
-    <!-- preloader -->
-    <div id="preloader">
-        <div class="preloader">
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <!-- preloader end  -->
+ 
 
     <!-- header -->
     <header class="header-area header-md-p">
@@ -58,7 +51,7 @@
                             <span><i class="fal fa-envelope-open"></i> mercyproject@gmail.com</span>
                         </div>
                         <div class="header-top-btn display-ib">
-                            <a href="{{ url('booking-service') }}" class="btn">Let’s talk</a>
+                            <a href="{{ route('login') }}" class="btn">Place Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -180,16 +173,10 @@
                                 <a href="index.html"><img src="{{ asset('front-end/img/logo/w_footer_logo.png') }}" alt="logo"></a>
                             </div>
                             <div class="footer-text">
-                                <p>Lorem ipsum dolor ame consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                                <span>support@sheen.com</span>
-                                <span>+821 123 456 88</span>
+                                 <span>support@gmail.com</span>
+                                <span>+254 745 314 414</span>
                             </div>
-                            <div class="footer-social">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-sm-6">
@@ -199,13 +186,8 @@
                             </div>
                             <div class="fw-link">
                                 <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Services</a></li>
-                                    <li><a href="#">How It Works</a></li>
-                                    <li><a href="#">Setting</a></li>
-                                    <li><a href="#">Privacy & Policy</a></li>
-                                    <li><a href="#">Latest Blog</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{{ url('about-us') }}">About Us</a></li>
+                                    <li><a href="{{ url('our-services') }}">Our Services</a></li> 
                                 </ul>
                             </div>
                         </div>
@@ -217,13 +199,8 @@
                             </div>
                             <div class="fw-link">
                                 <ul>
-                                    <li><a href="#">Corporate Headquarters</a></li>
-                                    <li><a href="#">Schools, Educational</a></li>
-                                    <li><a href="#">Medical & Healthcare</a></li>
-                                    <li><a href="#">Industrial & Manufacturing</a></li>
-                                    <li><a href="#">Owner Occupied Buildings</a></li>
-                                    <li><a href="#">Car Dealerships</a></li>
-                                    <li><a href="#">Government Buildings</a></li>
+                                    <li><a href="{{ route('login') }}">Customer Account</a></li>
+                                    <li><a href="{{ route('login') }}">Collector Account</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -231,14 +208,13 @@
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <div class="footer-widget wf-widget mb-30">
                             <div class="fw-title mb-20">
-                                <h3>Download Apps</h3>
+                                <h3>My Laundries</h3>
                             </div>
-                            <div class="f-download-wrap">
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do</p>
-                                <div class="f-download-btn">
-                                    <a href="#"><img src="{{ asset('front-end/img/icon/fd_btn01.png') }}" alt="img"></a>
-                                    <a href="#"><img src="{{ asset('front-end/img/icon/fd_btn02.png') }}" alt="img"></a>
-                                </div>
+                            <div class="fw-link">
+                                <ul>
+                                    <li><a href="{{ route('login') }}">My Account  </a></li>
+                                    <li><a href="{{ route('login') }}">Upload New laundry</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -250,18 +226,9 @@
                 <div class="copyright-wrap pt-20 pb-20">
                     <div class="row">
                         <div class="col-12">
-                            <div class="footer-b-link w-fb-link text-center">
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Latest Blog</a></li>
-                                    <li><a href="#">Project</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
+                            
                             <div class="copyright-text wc-text text-center">
-                                <p>Copyright 2019 <span>BDevs</span>. All Rights Reserved</p>
+                                <p>Copyright 2021 <span>Klear Laundry Cleaners</span>. Designed & Developed by - Mercy</p>
                             </div>
                         </div>
                     </div>

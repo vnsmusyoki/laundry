@@ -234,8 +234,7 @@
                         <a href="#" >
                             <i class="bi bi-cart2 icon-lg"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0">
-                            <h6 class="m-0 px-4 py-3 border-bottom">Shopping Cart</h6>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"> 
                             <div class="dropdown-menu-body">
                                 
                                  

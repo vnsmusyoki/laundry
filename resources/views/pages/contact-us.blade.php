@@ -21,12 +21,11 @@
     </section>
     <!-- breadcrumb-area-end -->
     <!-- map-area -->
-    <div class="map-wrap" data-background="{{  asset('front-end/img/map_img.jpg') }}"></div>
     <!-- map-area-end -->
     <!-- contact-area -->
     <section class="inner-contact-area pb-85">
         <div class="container">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-lg-4 col-md-6">
                     <div class="single-contact-info p-relative mb-30">
                         <i class="far fa-headphones-alt"></i>
@@ -36,11 +35,10 @@
                                 <i class="far fa-phone"></i>
                             </div>
                             <div class="box-c-content">
-                                <span>+8123 456 788 99</span>
-                                <span>+8123 (456) 788 99</span>
+                                <span>+254 745 314 414</span> 
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</p>
+                        <p>Call Us Anytime for your service</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -53,10 +51,10 @@
                             </div>
                             <div class="box-c-content">
                                 <span>support@gmail.com</span>
-                                <span>www.infoclean.net</span>
+                                 
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</p>
+                        <p>We will get back to you as soon as we can</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -68,11 +66,11 @@
                                 <i class="far fa-map-marked"></i>
                             </div>
                             <div class="box-c-content">
-                                <span>PO Box 16122 Collins Street</span>
-                                <span>West Victoria, Australia</span>
+                                <span>PO Box 212 - 90122</span>
+                                <span>Meru, Meru Town</span>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</p>
+                        <p>You can also visit our offices </p>
                     </div>
                 </div>
             </div>
