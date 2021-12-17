@@ -216,71 +216,7 @@
             </div>
         </section>
         <!-- services-area-end -->
-        <!-- fact-area -->
-        <section class="fact-area p-relative fact-area-p pt-115 pb-90">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6 col-lg-8 col-md-10">
-                        <div class="section-title text-center mb-80">
-                            <span>Company Fact</span>
-                            <h2>Together We'll Explore New Things</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-xl-2 col-lg-3 col-sm-6">
-                        <div class="single-fact text-center mb-30">
-                            <div class="fact-icon mb-40 p-relative green">
-                                <img src="{{ asset('front-end/img/shape/counter_circle01.png') }}" class="rotateme" alt="img">
-                                <i class="fal fa-location"></i>
-                            </div>
-                            <div class="fact-count">
-                                <h2 class="count">20</h2>
-                                <span>Project Complate</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-sm-6">
-                        <div class="single-fact text-center mb-30">
-                            <div class="fact-icon mb-40 p-relative yellow">
-                                <img src="{{ asset('front-end/img/shape/counter_circle02.png') }}" class="rotateme" alt="img">
-                                <i class="fal fa-heart"></i>
-                            </div>
-                            <div class="fact-count">
-                                <h2 class="count">32</h2>
-                                <span>Satisfied Clients</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-sm-6">
-                        <div class="single-fact text-center mb-30">
-                            <div class="fact-icon mb-40 p-relative purpole">
-                                <img src="{{ asset('front-end/img/shape/counter_circle03.png') }}" class="rotateme" alt="img">
-                                <i class="fal fa-trophy"></i>
-                            </div>
-                            <div class="fact-count">
-                                <h2 class="count">80</h2>
-                                <span>Win Awards</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-sm-6">
-                        <div class="single-fact text-center mb-30">
-                            <div class="fact-icon mb-40 p-relative blue">
-                                <img src="{{ asset('front-end/img/shape/counter_circle04.png') }}" class="rotateme" alt="img">
-                                <i class="fal fa-shield-check"></i>
-                            </div>
-                            <div class="fact-count">
-                                <h2 class="count">65</h2>
-                                <span>Win Awards</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="fact-shape rotateme"><img src="{{ asset('front-end/img/shape/s_about_shape01.png') }}" alt="img"></div>
-        </section>
-        <!-- fact-area-end -->
+         
         <!-- choose-area -->
         <section class="choose-area choose-padding p-relative pb-120">
             <div class="container">
@@ -292,7 +228,7 @@
                             <h2>Enjoy Your Time Off How We Work</h2>
                         </div>
                         <div class="s-choose-wrap">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris</p>
+                            <p>Klear Laundry  – We are efficient “Pick Up” dry cleaning services provider for all your suits, shirts, wedding gowns e.t.c. Our cleaning detergents are certified and acredited with an environmentally approved non carcenogenic dry and wet cleaning solution detergents manufacturer –Ecolab East Africa. Your garments are cleaned and returned without any lingering odour.</p>
                             <div class="choose-list mt-40">
                                 <ul>
                                     <li>
@@ -301,7 +237,7 @@
                                         </div>
                                         <div class="s-choose-content fix">
                                             <h4>Move Out Cleaning</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                           
                                         </div>
                                     </li>
                                     <li>
@@ -310,7 +246,7 @@
                                         </div>
                                         <div class="s-choose-content fix">
                                             <h4>Regular & Monthly Cleaning</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                            
                                         </div>
                                     </li>
                                     <li>
@@ -319,7 +255,7 @@
                                         </div>
                                         <div class="s-choose-content fix">
                                             <h4>Customer Focused Reviews</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                            
                                         </div>
                                     </li>
                                 </ul>
@@ -337,267 +273,8 @@
             <div class="t-choose-shape tc-shape-two"><img src="{{ asset('front-end/img/shape/choose_shape02.png') }}" alt="shape"></div>
         </section>
         <!-- choose-area-end -->
-        <!-- team-area -->
-        <section class="team-area team-bg fix p-relative pt-115 pb-90" data-background="{{ asset('front-end/img/bg/team_bg03.jpg') }}">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6 col-lg-7">
-                        <div class="section-title white-t text-center mb-70">
-                            <span>Team Member</span>
-                            <h2>Meet Our Exclusive Team Member</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="s-single-team fix mb-30 p-relative">
-                            <div class="team-thumb">
-                                <img src="{{ asset('front-end/img/team/s_team_img01.jpg') }}" alt="img">
-                            </div>
-                            <div class="team-content s-team-content text-center">
-                                <h4>Sonaban Koila</h4>
-                                <span>Kitchen Cleaner</span>
-                                <div class="team-socail">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="s-single-team fix mb-30 p-relative">
-                            <div class="team-thumb">
-                                <img src="{{ asset('front-end/img/team/s_team_img02.jpg') }}" alt="img">
-                            </div>
-                            <div class="team-content s-team-content text-center">
-                                <h4>Brian Ramirez</h4>
-                                <span>Office Cleaner</span>
-                                <div class="team-socail">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="s-single-team fix mb-30 p-relative">
-                            <div class="team-thumb">
-                                <img src="{{ asset('front-end/img/team/s_team_img03.jpg') }}" alt="img">
-                            </div>
-                            <div class="team-content s-team-content text-center">
-                                <h4>kabila roma</h4>
-                                <span>Kitchen Cleaner</span>
-                                <div class="team-socail">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="t-team-shape rotateme"><img src="{{ asset('front-end/img/shape/team_dots_shape.png') }}" alt="img"></div>
-        </section>
-        <!-- team-area-end -->
-        <!-- pricing-area -->
-        <section class="pricing-area pt-115 pb-60">
-            <div class="container">
-                <div class="row align-items-center mb-110">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="side-title">
-                            <span class="title-line"></span>
-                            <span>Our Pricing</span>
-                            <h2>Outstanding Cleaning Services With Flat Pricing</h2>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-4">
-                        <ul class="nav nav-tabs pricing-tabs s-pricing-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Monthly</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">yearly</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="s-pricing-box text-center mb-60">
-                                    <div class="s-pricing-icon">
-                                        <img src="img/icon/s_pricing_icon01.png" alt="icon">
-                                    </div>
-                                    <div class="pricing-head mb-30">
-                                        <h4>Basic Plan</h4>
-                                    </div>
-                                    <div class="pricing-list mb-30">
-                                        <ul>
-                                            <li>3 Bedrooms cleaning</li>
-                                            <li>Vacuuming</li>
-                                            <li>2 Bathroom cleaning</li>
-                                            <li>Mirror Cleaning</li>
-                                            <li>1 Livingroom cleaning</li>
-                                            <li>Window Sills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-count mb-40">
-                                        <h2>$14.99</h2>
-                                    </div>
-                                    <div class="pricing-btn s-pricing-btn">
-                                        <a href="#" class="btn">Book Online</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="s-pricing-box active text-center mb-60">
-                                    <div class="s-pricing-icon">
-                                        <img src="{{ asset('front-end/img/icon/s_pricing_icon02.png') }}" alt="icon">
-                                    </div>
-                                    <div class="pricing-head mb-30">
-                                        <h4>Standard Plan</h4>
-                                    </div>
-                                    <div class="pricing-list mb-30">
-                                        <ul>
-                                            <li>3 Bedrooms cleaning</li>
-                                            <li>Vacuuming</li>
-                                            <li>2 Bathroom cleaning</li>
-                                            <li>Mirror Cleaning</li>
-                                            <li>1 Livingroom cleaning</li>
-                                            <li>Window Sills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-count mb-40">
-                                        <h2>$49.99</h2>
-                                    </div>
-                                    <div class="pricing-btn s-pricing-btn">
-                                        <a href="#" class="btn">Book Online</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="s-pricing-box text-center mb-60">
-                                    <div class="s-pricing-icon">
-                                        <img src="{{ asset('front-end/img/icon/s_pricing_icon03.png') }}" alt="icon">
-                                    </div>
-                                    <div class="pricing-head mb-30">
-                                        <h4>Premium Plan</h4>
-                                    </div>
-                                    <div class="pricing-list mb-30">
-                                        <ul>
-                                            <li>3 Bedrooms cleaning</li>
-                                            <li>Vacuuming</li>
-                                            <li>2 Bathroom cleaning</li>
-                                            <li>Mirror Cleaning</li>
-                                            <li>1 Livingroom cleaning</li>
-                                            <li>Window Sills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-count mb-40">
-                                        <h2>$99.99</h2>
-                                    </div>
-                                    <div class="pricing-btn s-pricing-btn">
-                                        <a href="#" class="btn">Book Online</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="s-pricing-box text-center mb-60">
-                                    <div class="s-pricing-icon">
-                                        <img src="{{ asset('front-end/img/icon/s_pricing_icon01.png') }}" alt="icon">
-                                    </div>
-                                    <div class="pricing-head mb-30">
-                                        <h4>Basic Plan</h4>
-                                    </div>
-                                    <div class="pricing-list mb-30">
-                                        <ul>
-                                            <li>3 Bedrooms cleaning</li>
-                                            <li>Vacuuming</li>
-                                            <li>2 Bathroom cleaning</li>
-                                            <li>Mirror Cleaning</li>
-                                            <li>1 Livingroom cleaning</li>
-                                            <li>Window Sills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-count mb-40">
-                                        <h2>$14.99</h2>
-                                    </div>
-                                    <div class="pricing-btn s-pricing-btn">
-                                        <a href="#" class="btn">Book Online</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="s-pricing-box active text-center mb-60">
-                                    <div class="s-pricing-icon">
-                                        <img src="{{ asset('front-end/img/icon/s_pricing_icon02.png') }}" alt="icon">
-                                    </div>
-                                    <div class="pricing-head mb-30">
-                                        <h4>Standard Plan</h4>
-                                    </div>
-                                    <div class="pricing-list mb-30">
-                                        <ul>
-                                            <li>3 Bedrooms cleaning</li>
-                                            <li>Vacuuming</li>
-                                            <li>2 Bathroom cleaning</li>
-                                            <li>Mirror Cleaning</li>
-                                            <li>1 Livingroom cleaning</li>
-                                            <li>Window Sills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-count mb-40">
-                                        <h2>$49.99</h2>
-                                    </div>
-                                    <div class="pricing-btn s-pricing-btn">
-                                        <a href="#" class="btn">Book Online</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="s-pricing-box text-center mb-60">
-                                    <div class="s-pricing-icon">
-                                        <img src="{{ asset('front-end/img/icon/s_pricing_icon03.png') }}" alt="icon">
-                                    </div>
-                                    <div class="pricing-head mb-30">
-                                        <h4>Premium Plan</h4>
-                                    </div>
-                                    <div class="pricing-list mb-30">
-                                        <ul>
-                                            <li>3 Bedrooms cleaning</li>
-                                            <li>Vacuuming</li>
-                                            <li>2 Bathroom cleaning</li>
-                                            <li>Mirror Cleaning</li>
-                                            <li>1 Livingroom cleaning</li>
-                                            <li>Window Sills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-count mb-40">
-                                        <h2>$99.99</h2>
-                                    </div>
-                                    <div class="pricing-btn s-pricing-btn">
-                                        <a href="#" class="btn">Book Online</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- pricing-area-end -->
+         
+        
         <!-- cta-area -->
         <section class="s-cta-area s-cta-bg pt-110 pb-120" data-background="{{ asset('front-end/img/bg/cta_bg01.jpg') }}">
             <div class="container">
@@ -605,7 +282,7 @@
                     <div class="col-xl-8 col-lg-10">
                         <div class="section-title white-t text-center s-cta-title mb-50">
                             <h2>Make Appointment Today</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris</p>
+                            <p>We are always happy to take the load off so that you have one less task to complete. You can book a same day delivery laundry service, complete with FREE PICKUP & DELIVERY. Go ahead and order now!</p>
                         </div>
                         <div class="s-cta-wrap">
                             <ul>
@@ -616,7 +293,7 @@
                                         </div>
                                         <div class="s-cta-content fix">
                                             <span>Emergency</span>
-                                            <h5>+123 08 963 45</h5>
+                                            <h5>+254 745 314 414</h5>
                                         </div>
                                     </div>
                                 </li>
@@ -627,7 +304,7 @@
                                 </li>
                                 <li>
                                     <div class="s-cta-btn">
-                                        <a href="#" class="btn">Book Your Plan</a>
+                                        <a href="{{ route('login') }}" class="btn">Book Your Plan</a>
                                     </div>
                                 </li>
                             </ul>
@@ -644,7 +321,7 @@
                     <div class="col-lg-6">
                         <div class="premium-img p-relative">
                             <img src="{{ asset('front-end/img/images/premium_img.jpg') }}" alt="img">
-                            <a href="https://www.youtube.com/watch?v=HcLsj1BIDSA" class="popup-video"><i class="fas fa-play"></i></a>
+                            <a href="#" class="popup-video"><i class="fas fa-play"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 inner-premium-p pl-50">
@@ -652,8 +329,8 @@
                             <h2>Get Premium Cleaning Services</h2>
                         </div>
                         <div class="premium-content mb-40">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit</p>
+                            <p>We know how time-consuming laundry can be, between the washer, dryer, dry cleaning driving, etc. Therefore, we decided to give you a forever break away from dirty clothes.</p>
+                                <p>KKlear Laundry Cleaners gets your laundry fresh, clean and perfectly organized delivered to your doorstep. With just some clicks you can schedule, and manage your pick up and drop off from anywhere.</p>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -666,7 +343,7 @@
                                             <h4>Commercial Cleaning</h4>
                                         </div>
                                     </div>
-                                    <p>Lorem ipsum dolor consectetur adipisicing elit sed do eiutempor incididunt ut labore et dolore.</p>
+                                    <p></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -679,7 +356,7 @@
                                             <h4>Residential Cleaning</h4>
                                         </div>
                                     </div>
-                                    <p>Lorem ipsum dolor consectetur adipisicing elit sed do eiutempor incididunt ut labore et dolore.</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
@@ -688,167 +365,6 @@
             </div>
         </section>
         <!-- premium-area-end -->
-        <!-- testimonial-area -->
-        <section class="testimonial-area pb-240">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-5 col-lg-7 col-md-9">
-                        <div class="section-title text-center mb-80">
-                            <span>Our Testimonials</span>
-                            <h2>What’s Our Client’s Say About Us</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid container-p">
-                <div class="row third-testimonial-active">
-                    <div class="col-xl-3">
-                        <div class="t-single-testimonial">
-                            <div class="t-client-info mb-30 fix">
-                                <div class="t-client-img">
-                                    <img src="{{ asset('front-end/img/testimonial/tt_img01.png') }}" alt="img">
-                                </div>
-                                <div class="t-client-name third-c-name fix">
-                                    <h5>Zamiz Para</h5>
-                                    <span>CEO &amp; Founder</span>
-                                    <div class="t-client-review">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="t-testimonial-content">
-                                <p>We have been associated with Laundris Laundry Service for almost a year and in short have been extremely pleased. Their service has been excellent and the entire organization is dedicated towards professionalism..</p>
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="t-single-testimonial">
-                            <div class="t-client-info mb-30 fix">
-                                <div class="t-client-img">
-                                    <img src="{{ asset('front-end/img/testimonial/tt_img02.png') }}" alt="img">
-                                </div>
-                                <div class="t-client-name third-c-name fix">
-                                    <h5>Pardeshi Sine</h5>
-
-                                    <div class="t-client-review">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="t-testimonial-content">
-                                <p>The new machines have had very few problems and their services are always done in a timely fashion. Our residents have been thrilled with the Laundris team and we look forward to a long relationship with this first-class organization.</p>
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="t-single-testimonial">
-                            <div class="t-client-info mb-30 fix">
-                                <div class="t-client-img">
-                                    <img src="{{ asset('front-end/img/testimonial/tt_img03.png') }}" alt="img">
-                                </div>
-                                <div class="t-client-name third-c-name fix">
-                                    <h5>Somalia Ane</h5>
-                                    <span>CEO &amp; Founder</span>
-                                    <div class="t-client-review">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="t-testimonial-content">
-                                <p>Over the last eight years they have proven, on several occasions that they are knowledgeable, prompt, and concerned about my immediate situation. I personally encourage any business associated with their laundry services.</p>
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="t-single-testimonial">
-                            <div class="t-client-info mb-30 fix">
-                                <div class="t-client-img">
-                                    <img src="img/testimonial/tt_img04.png" alt="img">
-                                </div>
-                                <div class="t-client-name third-c-name fix">
-                                    <h5>Frank Sokla</h5>
-
-                                    <div class="t-client-review">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="t-testimonial-content">
-                                <p>We have been associated with Laundris Laundry Service for almost a year and in short have been extremely pleased. Their service has been excellent and the entire organization is dedicated towards professionalism..</p>
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="t-single-testimonial">
-                            <div class="t-client-info mb-30 fix">
-                                <div class="t-client-img">
-                                    <img src="{{ asset('front-end/img/testimonial/tt_img05.png') }}" alt="img">
-                                </div>
-                                <div class="t-client-name third-c-name fix">
-                                    <h5>Gunlaima Pix</h5>
-                                    <span>CEO &amp; Founder</span>
-                                    <div class="t-client-review">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="t-testimonial-content">
-                                <p>Over the last eight years they have proven, on several occasions that they are knowledgeable, prompt, and concerned about my immediate situation. I personally encourage any business associated with their laundry services..</p>
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="t-single-testimonial">
-                            <div class="t-client-info mb-30 fix">
-                                <div class="t-client-img">
-                                    <img src="{{ asset('front-end/img/testimonial/tt_img01.png') }}" alt="img">
-                                </div>
-                                <div class="t-client-name third-c-name fix">
-                                    <h5>Tambu Radi</h5>
-                                    <span>CEO &amp; Founder</span>
-                                    <div class="t-client-review">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="t-testimonial-content">
-                                <p>The new machines have had very few problems and their services are always done in a timely fashion. Our residents have been thrilled with the Laundris team and we look forward to a long relationship with this first-class organization.</p>
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- testimonial-area-end -->
+        
      
 @endsection
