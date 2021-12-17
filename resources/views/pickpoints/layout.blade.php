@@ -43,8 +43,8 @@
                     <div class="avatar me-3">
 
                         @if (Auth::user()->picture == null)
-                        <img src="{{ asset('backend/assets/images/user/man_avatar3.jpg') }}" class="rounded-circle"
-                        alt="image">
+                            <img src="{{ asset('backend/assets/images/user/man_avatar3.jpg') }}" class="rounded-circle"
+                                alt="image">
                         @else
                             <img src="{{ asset('storage/profiles/' . Auth()->user()->picture) }}"
                                 class="rounded-circle">
@@ -56,10 +56,12 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a href="{{ url('collector/account-security') }}" class="dropdown-item d-flex align-items-center">
+                    <a href="{{ url('collector/account-security') }}"
+                        class="dropdown-item d-flex align-items-center">
                         <i class="bi bi-person dropdown-item-icon"></i> Profile
                     </a>
-                    <a href="{{ url('collector/account-security') }}" class="dropdown-item d-flex align-items-center">
+                    <a href="{{ url('collector/account-security') }}"
+                        class="dropdown-item d-flex align-items-center">
                         <i class="bi bi-envelope dropdown-item-icon"></i> Profile Avatar
                     </a>
                     <a href="{{ url('collector/account-security') }}" class="dropdown-item d-flex align-items-center"
@@ -100,7 +102,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('user/all-pending-orders') }}">
+                    <a href="{{ url('collector/all-pending-orders') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-truck"></i>
                         </span>
@@ -108,7 +110,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('user/all-orders') }}">
+                    <a href="{{ url('collector/all-orders') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-truck"></i>
                         </span>
@@ -116,7 +118,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('user/all-transactions') }}">
+                    <a href="{{ url('collector/all-transactions') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-wallet2"></i>
                         </span>
@@ -124,7 +126,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('user/pending-laundries') }}">
+                    <a href="{{ url('collector/pending-laundries') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-person-badge"></i>
                         </span>
@@ -132,7 +134,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('user/account-security') }}">
+                    <a href="{{ url('collector/account-security') }}">
                         <span class="nav-link-icon">
                             <i class="bi bi-gear"></i>
                         </span>

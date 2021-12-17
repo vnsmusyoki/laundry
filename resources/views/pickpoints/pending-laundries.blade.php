@@ -1,6 +1,37 @@
 @extends('pickpoints.layout')
 @section('title', 'All Paid Orders')
 @section('content')
+
+    <div class="header">
+        <div class="menu-toggle-btn">
+            <!-- Menu close button for mobile devices -->
+            <a href="#">
+                <i class="bi bi-list"></i>
+            </a>
+        </div>
+        <!-- Logo -->
+        <a href="{{ route('customer') }}" class="logo">
+            <img width="100" src="{{ asset('backend/assets/images/logo.svg') }}" alt="logo">
+        </a>
+        <!-- ./ Logo -->
+        <div class="page-title">Collectors Dashboard</div>
+
+        <div class="header-bar ms-auto">
+            <ul class="navbar-nav justify-content-end">
+
+            </ul>
+        </div>
+        <!-- Header mobile buttons -->
+        <div class="header-mobile-buttons">
+            <a href="#" class="search-bar-btn">
+                <i class="bi bi-search"></i>
+            </a>
+            <a href="#" class="actions-btn">
+                <i class="bi bi-three-dots"></i>
+            </a>
+        </div>
+        <!-- ./ Header mobile buttons -->
+    </div>
     <div class="mb-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -9,10 +40,12 @@
                         <i class="bi bi-globe2 small me-2"></i> Dashboard
                     </a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Orders</li>
+                <li class="breadcrumb-item active" aria-current="page">Orders ( Orders at the company still not delivered
+                    back)</li>
             </ol>
         </nav>
     </div>
+
 
 
     <div class="table-responsive">
@@ -57,7 +90,8 @@
                                         <div class="dropdown-menu dropdown-menu-end">
 
                                             <a href="{{ url('collector/order-details/' . $order->id) }}"
-                                                class="dropdown-item">Order Details</a>
+                                                class="dropdown-item">Details</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -67,7 +101,7 @@
                 @else
                     <tr>
                         <td colspan="9">
-                            <center>No Collection Points added</center>
+                            <center>No Orders Here - Check for the completed orders</center>
                         </td>
                     </tr>
                 @endif

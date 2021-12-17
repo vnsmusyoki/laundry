@@ -8,6 +8,7 @@ use App\Models\CustomerLaundry;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Storage;
 
 class CollectionAccountController extends Controller
 {
@@ -105,9 +106,76 @@ class CollectionAccountController extends Controller
         Toastr::warning('Order payment has been received.', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->to('collector/all-paid-orders');
     }
-    public function paidorders(){
+    public function paidorders()
+    {
         $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
         $orders = CustomerLaundry::where('checkpoint_id', $point->id)->get();
         return view('pickpoints.all-orders', compact('orders'));
+    }
+    public function pendingorders()
+    {
+        $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
+        $orders = CustomerLaundry::where('laundry_status', 'Cleaning')->where('checkpoint_id', $point->id)->get();
+        return view('pickpoints.pending-laundries', compact('orders'));
+    }
+    public function allorders()
+    {
+        $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
+        $orders = CustomerLaundry::where('checkpoint_id', $point->id)->get();
+        return view('pickpoints.all-orders', compact('orders'));
+    }
+    public function orderdetails($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+        return view('pickpoints.view-customer-order', compact('order'));
+    }
+    public function accountsecurity()
+    {
+        return view('pickpoints.account-profile');
+    }
+    public function updatepassword(Request $request)
+    {
+        $this->validate($request, [
+            'password' => 'required|min:8|max:20|confirmed',
+            'password_confirmation' => 'required'
+        ]);
+
+        $user = User::find(auth()->user()->id);
+        $user->password = bcrypt($request->input('password'));
+        $user->save();
+
+        Toastr::success('password has been updated.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->back();
+    }
+    public function updateemail(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email|unique:users',
+        ]);
+
+        $user = User::find(auth()->user()->id);
+        $user->email = $request->input('email');
+        $user->save();
+
+        Toastr::success('Email Address has been updated.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->back();
+    }
+    public function updateavatar(Request $request)
+    {
+        $this->validate($request, [
+            'picture' => 'required|image|mimes:jpeg,png,jpg|max:6048',
+        ]);
+        $user = User::find(auth()->user()->id);
+        Storage::delete('public/profiles/' . $user->picture);
+        $fileNameWithExt = $request->picture->getClientOriginalName();
+        $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+        $Extension = $request->picture->getClientOriginalExtension();
+        $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
+        $path = $request->picture->storeAs('profiles', $filenameToStore, 'public');
+        $user->picture = $filenameToStore;
+        $user->save();
+
+        Toastr::success('Account Avatar has been updated.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->back();
     }
 }

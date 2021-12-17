@@ -78,5 +78,12 @@ Route::prefix('collector')->group(function (){
     Route::get('received-order-payment/{order}', [CollectionAccountController::class, 'uploadpayment']);
     Route::patch('store-payments/{order}', [CollectionAccountController::class, 'updatepayment']);
     Route::get('all-paid-orders', [CollectionAccountController::class, 'paidorders']);
+    Route::get('account-security', [CollectionAccountController::class, 'accountsecurity']);
+    Route::post('update-password', [CollectionAccountController::class, 'updatepassword']);
+    Route::post('update-email', [CollectionAccountController::class, 'updateemail']);
+    Route::post('update-picture', [CollectionAccountController::class, 'updateavatar']);
+    Route::get('all-pending-orders', [CollectionAccountController::class, 'pendingorders']);
+    Route::get('order-details/{order}', [CollectionAccountController::class, 'orderdetails']);
+    Route::get('all-orders', [CollectionAccountController::class, 'allorders']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html

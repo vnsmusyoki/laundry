@@ -9,7 +9,7 @@
             </a>
         </div>
         <!-- Logo -->
-        <a href="{{ route('customer') }}" class="logo">
+        <a href="{{ route('collector') }}" class="logo">
             <img width="100" src="{{ asset('backend/assets/images/logo.svg') }}" alt="logo">
         </a>
         <!-- ./ Logo -->
@@ -50,7 +50,7 @@
                 </div>
                 <div class="my-4 my-md-0">
                     <h3 class="mb-1">{{ Auth::user()->name }}</h3>
-                    <small>Customer Account</small>
+                    <small>Collector Account</small>
                 </div>
                 <div class="ms-md-auto">
                     <a href="" class="btn btn-primary btn-lg btn-icon">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form action="{{ url('user/update-password') }}" method="POST" autocomplete="off">
+                        <form action="{{ url('collector/update-password') }}" method="POST" autocomplete="off">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6">
@@ -112,7 +112,7 @@
                 </div>
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form action="{{ url('user/update-picture') }}" method="POST" autocomplete="off"
+                        <form action="{{ url('collector/update-picture') }}" method="POST" autocomplete="off"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form action="{{ url('user/update-email') }}" method="POST" autocomplete="off">
+                        <form action="{{ url('collector/update-email') }}" method="POST" autocomplete="off">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
