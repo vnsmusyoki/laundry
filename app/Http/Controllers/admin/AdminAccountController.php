@@ -23,7 +23,12 @@ class AdminAccountController extends Controller
     }
     public function index()
     {
-        return view('admin.dashboard');
+        $delivered = CustomerLaundry::where('laundry_status', 'Cleaned')->get();
+        $paid = CustomerLaundry::where('payment_status', 'Accepted')->get();
+        $neworders = CustomerLaundry::where(['payment_status'=>'Accepted', 'laundry_status'=>'Cleaning'])->get();
+        $collectors = User::where('account_category', 'Collector')->get();
+
+        return view('admin.dashboard', compact(['delivered', 'paid', 'collectors', 'neworders']));
     }
     public function addcollectionpoint()
     {
@@ -50,6 +55,7 @@ class AdminAccountController extends Controller
         $user->name = $request->input('full_names');
         $user->email = $request->input('email');
         $user->password = bcrypt($password);
+        $user->account_category = "Collector";
         $user->save();
         $user->attachRole('collector');
 
@@ -120,6 +126,7 @@ class AdminAccountController extends Controller
         $user = User::findOrFail($station->user_id);
         $user->name = $request->input('full_names');
         $user->email = $request->input('email');
+
         $user->save();
 
         Toastr::warning('Collection Point has been Edited.', 'Success', ["positionClass" => "toast-top-right"]);
@@ -191,11 +198,12 @@ class AdminAccountController extends Controller
         $topic = "Your Laundry has been CLEANED";
         $receiver = $order->laundryuser->email;
         Mail::to($receiver)->send(new AdminDeliverOrder($receiver, $message, $topic));
-         Toastr::success('Client has been notified to check with the collection point.', 'Success', ["positionClass" => "toast-top-right"]);
+        Toastr::success('Client has been notified to check with the collection point.', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->to('admin/ready-laundries');
     }
-    public function completedorders(){
+    public function completedorders()
+    {
         $orders = CustomerLaundry::where('laundry_status', 'Cleaned')->get();
         return view('admin.completed-orders', compact('orders'));
     }

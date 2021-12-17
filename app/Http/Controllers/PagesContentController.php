@@ -57,6 +57,7 @@ class PagesContentController extends Controller
         $user->name = $request->input('full_name');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
+        $user->account_category = "Customer";
         $user->save();
         $user->attachRole('user');
 
