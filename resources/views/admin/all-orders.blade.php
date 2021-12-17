@@ -49,7 +49,7 @@
 
                                 @if ($order->payment_status == 'Pending')
                                     <span class="badge bg-warning">Not Confirmed</span>
-                                @elseif( $order->payment_status == "confimed")
+                                @elseif( $order->payment_status == "Accepted")
                                     <span class="badge bg-success">Confirmed</span>
                                 @else
                                     <span class="badge bg-danger">Cancelled</span>

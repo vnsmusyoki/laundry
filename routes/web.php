@@ -45,6 +45,7 @@ Route::prefix('admin')->group(function () {
     Route::get('delete-collection-point/{point}', [AdminAccountController::class, 'deletecollectionpoint']);
     Route::get('all-orders', [AdminAccountController::class, 'allorders']);
     Route::get('confirm-payment/{order}', [AdminAccountController::class, 'confirmpayment']);
+    Route::get('view-customer-order/{order}', [AdminAccountController::class, 'viewcustomeroder']);
     Route::patch('payments-verdict/{order}', [AdminAccountController::class, 'paymentverdict']);
 });
 Route::get('/user/dashboard', [CustomerAccountController::class, 'index'])->name('customer');

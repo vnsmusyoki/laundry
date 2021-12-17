@@ -3,6 +3,6 @@
     Hi {{ $receiver }}
     #Title:  {{ $topic }}
     {{ $message }}
-    Thanks 
+    Thanks
     {{ config('app.name') }}
 @endcomponent

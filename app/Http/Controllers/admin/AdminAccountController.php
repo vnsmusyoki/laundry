@@ -4,11 +4,13 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\CollectorRegistration;
+use App\Mail\OrderPayment;
 use App\Models\CollectionPoint;
 use App\Models\CustomerLaundry;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
@@ -132,6 +134,11 @@ class AdminAccountController extends Controller
         $order = CustomerLaundry::findOrFail($order);
         return view('admin.confirm-payment', compact('order'));
     }
+    public function viewcustomeroder($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+        return view('admin.view-customer-order', compact('order'));
+    }
     public function paymentverdict(Request $request, $order)
     {
         $this->validate($request, [
@@ -140,6 +147,30 @@ class AdminAccountController extends Controller
         $verdict = $request->input('payment_verdict');
 
         $order = CustomerLaundry::findOrFail($order);
-        return view('admin.confirm-payment', compact('order'));
+        if ($verdict == "Accept") {
+            $order->payment_status = "Accepted";
+            $order->laundry_status = "Cleaning";
+            $order->collection_status = "Transported";
+            $order->delivery_status = "NotDelivered";
+            $order->pickup_date = Carbon::now()->addDay();
+            $order->save();
+            $message = "Great!, Your Order Payment is Now CONFIRMED. You will receive back your cleaned laundry in the next 24 HOURS FROM NOW.Your order ID " . $order->laundry_id . " with a PAYMENT of KSHS. " . $order->amount . " Has been approved. Transaction Code - " . $order->transaction_code . " .Login for furher details.";
+            $topic = "Order Payment Verification";
+            $receiver = $order->laundryuser->email;
+            Mail::to($receiver)->send(new OrderPayment($receiver, $message, $topic));
+        } else {
+            $order->payment_status = "Cancelled";
+            $order->laundry_status = "Cancelled";
+            $order->collection_status = "Cancelled";
+            $order->delivery_status = "Cancelled";
+            $order->pickup_date = Carbon::now();
+            $order->save();
+            $message = "Unfortunately!, after unsuccessfull checkup and validation of the TRANSACTION CODE" . $order->transaction_code . " provided, we could not verify and as a result your order " . $order->laundry_id . " Has been CANCELLED.";
+            $topic = "Order Payment Verification";
+            $receiver = $order->laundryuser->email;
+            Mail::to($receiver)->send(new OrderPayment($receiver, $message, $topic));
+        }
+        Toastr::success('Payment has been verified and the Email sent to the client.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->to('admin/all-orders');
     }
 }
