@@ -1,4 +1,4 @@
-@extends('pickpoints.layout')
+@extends('user.layout')
 @section('title', 'Create New Laundry')
 @section('content')
     <div class="header">
@@ -13,7 +13,7 @@
             <img width="100" src="{{ asset('backend/assets/images/logo.svg') }}" alt="logo">
         </a>
         <!-- ./ Logo -->
-        <div class="page-title">Collector Dashboard</div>
+        <div class="page-title">Customer Dashboard</div>
 
         <div class="header-bar ms-auto">
             <ul class="navbar-nav justify-content-end">
@@ -42,7 +42,7 @@
                         <h6 class="card-title mb-3">Billing</h6>
                         <div class="text-muted">Enter your Transaction Code below after payment</div>
                     </div>
-                    <form action="{{ url('collector/store-payments/' . $order->id) }}" method="POST" autocomplete="off">
+                    <form action="{{ url('user/store-payments/' . $order->id) }}" method="POST" autocomplete="off">
                         @method('PATCH')
                         @csrf
                         <div class="row g-4 mb-3">

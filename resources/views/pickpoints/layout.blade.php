@@ -118,21 +118,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('collector/all-transactions') }}">
+                    <a href="{{ url('collector/collected-orders') }}">
                         <span class="nav-link-icon">
-                            <i class="bi bi-wallet2"></i>
+                            <i class="bi bi-truck"></i>
                         </span>
-                        <span>All Transactions</span>
+                        <span>Collected Laundries</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('collector/pending-laundries') }}">
-                        <span class="nav-link-icon">
-                            <i class="bi bi-person-badge"></i>
-                        </span>
-                        <span>Pending Laundries</span>
-                    </a>
-                </li>
+
+
                 <li>
                     <a href="{{ url('collector/account-security') }}">
                         <span class="nav-link-icon">

@@ -55,139 +55,70 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-8">
+        <div class="table-responsive">
+            <table class="table table-custom table-lg mb-10" id="orders">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Picture</th>
+                        <th>Order ID</th>
+                        <th>Client</th>
+                        <th>Date Uploaded</th>
+                        <th>Collection Point</th>
+                        <th>Notify Client</th>
+                        <th>Mark Complete</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if ($orders->count() >= 1)
+                        @foreach ($orders as $key => $order)
+                            <tr>
+                                <td>
+                                    {{ ++$key }}
+                                </td>
+                                <td>
+                                    <img src="{{ asset('storage/laundry/' . $order->picture) }}" alt=""
+                                        style="height: 50px;width:50px;border-radius:5px;">
+                                </td>
+                                <td>{{ $order->laundry_id }}</td>
+                                <td>{{ $order->laundryuser->name }}</td>
+                                <td>{{ $order->created_at->addHours(3)->format('l,d-m-y, h:i:s a') }}</td>
+                                <td>{{ $order->laundrycheckpoint->collection_name }}</td>
+                                <td><a href="{{ url('collector/nofify-client/'.$order->id) }}" class="btn btn-primary">Notify Client</a></td>
+                                <td><a href="{{ url('collector/mark-collected/' . $order->id) }}" class="btn btn-success">Mark Complete</a></td>
+                                <td class="text-end">
+                                    <div class="d-flex">
+                                        <div class="dropdown ms-auto">
+                                            <a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                <i class="bi bi-three-dots"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                @if ($order->delivery_status = 'delivered to Collection Point')
+                                                    <a href="{{ url('collector/nofify-client/'.$order->id) }}"
+                                                        class="dropdown-item">Notify Client to Collect</a>
+                                                @endif
+                                                <a href="{{ url('collector/order-details/' . $order->id) }}"
+                                                    class="dropdown-item">Order Details</a>
+                                                <a href="{{ url('collector/mark-collected/' . $order->id) }}"
+                                                    class="dropdown-item">Mark As Collected</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="9">
+                                <center>No Collection Points added</center>
+                            </td>
+                        </tr>
+                    @endif
 
-                <div class="row g-4 mb-4">
-                    <div class="col-md-4">
-                        <div class="card bg-cyan text-white-90">
-                            <div class="card-body d-flex align-items-center">
-                                <i class="bi bi-box-seam display-7 me-3"></i>
-                                <div>
-                                    <h4 class="mb-0">45</h4>
-                                    <span>My Orders</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card bg-purple text-white-90">
-                            <div class="card-body d-flex align-items-center">
-                                <i class="bi bi-heart display-7 me-3"></i>
-                                <div>
-                                    <h4 class="mb-0">5</h4>
-                                    <span>My Wishlist</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card bg-teal text-white-90">
-                            <div class="card-body d-flex align-items-center">
-                                <i class="bi bi-wallet2 display-7 me-3"></i>
-                                <div>
-                                    <h4 class="mb-0">$9,000</h4>
-                                    <span>My Profit</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h6 class="card-title mb-4">Income by Month</h6>
-                        <div id="profit"></div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h6 class="card-title mb-4">Recent Activities</h6>
-                        <ul class="list-group list-group-flush">
-                            <li class="px-0 list-group-item d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <div class="avatar avatar-warning me-3">
-                                        <span class="avatar-text fw-bold rounded-circle">
-                                            <i class="bi bi-file-text"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 d-md-flex">
-                                    <div class="flex-fill mb-1 mb-lg-0">
-                                        <p class="mb-1">
-                                            Your billing information is not active.
-                                        </p>
-                                        <span class="text-muted small">
-                                            <i class="bi bi-clock me-1"></i> Yesterday
-                                        </span>
-                                    </div>
-                                    <a href="#">Show</a>
-                                </div>
-                            </li>
-                            <li class="px-0 list-group-item d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <div class="avatar avatar-warning me-3">
-                                        <span class="avatar-text rounded-circle">
-                                            <i class="bi bi-person"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 d-md-flex">
-                                    <div class="flex-fill mb-1 mb-lg-0">
-                                        <p class="mb-1">
-                                            Your subscription has expired.
-                                        </p>
-                                        <span class="text-muted small">
-                                            <i class="bi bi-clock me-1"></i> Today
-                                        </span>
-                                    </div>
-                                    <a href="#">Show</a>
-                                </div>
-                            </li>
-                            <li class="px-0 list-group-item d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <div class="avatar avatar-warning me-3">
-                                        <span class="avatar-text rounded-circle">
-                                            <i class="bi bi-hdd"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 d-md-flex">
-                                    <div class="flex-fill mb-1 mb-lg-0">
-                                        <p class="mb-1">
-                                            Your storage space is running low
-                                        </p>
-                                        <span class="text-muted small">
-                                            <i class="bi bi-clock me-1"></i> Last Week
-                                        </span>
-                                    </div>
-                                    <a href="#">Show</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <ul class="nav nav-pills flex-column gap-2">
-                            <li class="nav-item">
-                                <a class="nav-link  active " href="./buyer-dashboard.html">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="./buyer-orders.html">My Orders</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="./buyer-addresses.html">My Addresses</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="./buyer-wishlist.html">Wishlist</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                </tbody>
+            </table>
         </div>
 
     </div>

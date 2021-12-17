@@ -65,6 +65,7 @@
                     <th>Picture</th>
                     <th>Order ID</th>
                     <th>Amount</th>
+                    <th>Payment Status</th>
                     <th>Date Uploaded</th>
                     <th>Collection Point</th>
                     <th>Category</th>
@@ -85,6 +86,15 @@
                             </td>
                             <td>{{ $order->laundry_id }}</td>
                             <td>Kshs. {{ $order->amount }}</td>
+                            <td>
+                                @if ($order->payment_status == 'Pending')
+                                    <span class="badge bg-warning">Not Confirmed</span>
+                                @elseif( $order->payment_status == "Accepted")
+                                    <span class="badge bg-success">Confirmed</span>
+                                @else
+                                    <span class="badge bg-danger">Cancelled</span>
+                                @endif
+                            </td>
                             <td>{{ $order->created_at->addHours(3)->format('l,d-m-y, h:i:s a') }}</td>
                             <td>{{ $order->laundrycheckpoint->collection_name }}</td>
                             <td>{{ $order->luggage_category }}</td>
@@ -98,10 +108,8 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
 
-                                            <a href="{{ url('user/edit-pending-order/' . $order->id) }}"
-                                                class="dropdown-item">Edit</a>
-                                            <a href="{{ url('user/delete-pending-order/' . $order->id) }}"
-                                                class="dropdown-item">Delete</a>
+                                            <a href="{{ url('user/view-order/' . $order->id) }}"
+                                                class="dropdown-item">View Order</a> 
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +119,7 @@
                 @else
                     <tr>
                         <td colspan="9">
-                            <center>No Collection Points added</center>
+                            <center>Nothing to Display</center>
                         </td>
                     </tr>
                 @endif

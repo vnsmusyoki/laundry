@@ -19,7 +19,8 @@ class CustomerAccountController extends Controller
     }
     public function index()
     {
-        return view('user.dashboard');
+        $orders = CustomerLaundry::where('customer_id', auth()->user()->id)->get();
+        return view('user.dashboard',compact('orders'));
     }
     public function newlaundry()
     {
@@ -84,12 +85,31 @@ class CustomerAccountController extends Controller
 
 
         Toastr::warning('Order has been Placed.', 'Success', ["positionClass" => "toast-top-right"]);
+
+        return redirect()->to('user/received-order-payment/'.$laundry->id);
+    }
+    public function uploadpayment($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+        return view('user.order-payment', compact('order'));
+    }
+    public function updatepayment(Request $request, $order)
+    {
+
+        $this->validate($request, [
+            'transaction_code' => 'required|string|min:10|max:10|unique:customer_laundries'
+        ]);
+        $order = CustomerLaundry::findOrFail($order);
+        $order->transaction_code = $request->input('transaction_code');
+        $order->payment_status = "Pending";
+        $order->save();
+        Toastr::warning('Order payment has been received.', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->to('user/all-pending-orders');
     }
     public function pendingorders()
     {
-        $orders = CustomerLaundry::where(['customer_id' => auth()->user()->id, 'collection_status' => 'Waiting'])->get();
 
+        $orders = CustomerLaundry::where(['customer_id' => auth()->user()->id, 'laundry_status' => 'Cleaned'])->orWhere(['customer_id' => auth()->user()->id, 'laundry_status' => 'Cleaning'])->get();
         return view('user.pending-orders', compact('orders'));
     }
     public function editpendingorder($order)
@@ -97,6 +117,12 @@ class CustomerAccountController extends Controller
         $order = CustomerLaundry::findOrFail($order);
         $points = CollectionPoint::all();
         return view('user.edit-pending-order', compact('order', 'points'));
+    }
+    public function vieworder($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+
+        return view('user.view-order', compact('order'));
     }
     public function deletependingorder($order)
     {
@@ -171,13 +197,12 @@ class CustomerAccountController extends Controller
     }
     public function alltransactions()
     {
-        $orders = CustomerLaundry::where('customer_id', auth()->user()->id)->get();
-
+        $orders = CustomerLaundry::where('customer_id',auth()->user()->id)->where('transaction_code', '!=', null)->get();
         return view('user.all-transactions', compact('orders'));
     }
     public function pendinglaundries()
     {
-        $orders = CustomerLaundry::where(['customer_id' => auth()->user()->id, 'delivery_status' => 'Waiting'])->get();
+        $orders = CustomerLaundry::where(['customer_id' => auth()->user()->id, 'laundry_status' => 'Cleaned'])->orWhere(['customer_id' => auth()->user()->id, 'laundry_status' => 'Cleaning'])->get();
 
         return view('user.pending-laundries', compact('orders'));
     }

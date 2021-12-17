@@ -14,49 +14,7 @@
         </nav>
     </div>
 
-    <div class="card">
-        <div class="card-body">
-            <div class="d-md-flex gap-4 align-items-center">
-                <div class="d-none d-md-flex">All Pending Points</div>
-                <div class="d-md-flex gap-4 align-items-center">
-                    <form class="mb-3 mb-md-0">
-                        <div class="row g-3">
-                            <div class="col-md-3">
-                                <select class="form-select">
-                                    <option>Sort by</option>
-                                    <option value="desc">Desc</option>
-                                    <option value="asc">Asc</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <select class="form-select">
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="30">30</option>
-                                    <option value="40">40</option>
-                                    <option value="50">50</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <button class="btn btn-outline-light" type="button">
-                                        <i class="bi bi-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dropdown ms-auto">
-                    <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle" aria-haspopup="true"
-                        aria-expanded="false">....</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+   
     <div class="table-responsive">
         <table class="table table-custom table-lg mb-0" id="orders">
             <thead>
@@ -67,6 +25,7 @@
                     <th>Amount</th>
                     <th>Date Uploaded</th>
                     <th>Collection Point</th>
+                    <th>Collection Status</th>
                     <th>Category</th>
                     <th>No. of Pieces</th>
                     <th class="text-end">Actions</th>
@@ -87,6 +46,21 @@
                             <td>Kshs. {{ $order->amount }}</td>
                             <td>{{ $order->created_at->addHours(3)->format('l,d-m-y, h:i:s a') }}</td>
                             <td>{{ $order->laundrycheckpoint->collection_name }}</td>
+                            <td>
+                                @if ($order->delivery_status == "NotDelivered")
+                                <span class="badge bg-warning">Being Cleaned</span>
+                                @elseif($order->delivery_status == "Cancelled")
+                                <span class="badge bg-warning">Order Cancelled</span>
+                                @elseif($order->delivery_status == "delivered to Collection Point")
+                                <span class="badge bg-success">Being transported Back</span>
+                                @elseif($order->delivery_status == "returned to CheckPoint")
+                                <span class="badge bg-success">Waiting You to Pick from Delivery Point</span>
+                                @elseif($order->delivery_status == "Taken by Customer")
+                                <span class="badge bg-success">Delivered & Taken</span>
+                                @else
+                                <span class="badge bg-danger">Pending</span>
+                                @endif
+                            </td>
                             <td>{{ $order->luggage_category }}</td>
                             <td>{{ $order->number_of_pieces }}</td>
                             <td class="text-end">
@@ -98,10 +72,9 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
 
-                                            <a href="{{ url('user/edit-pending-order/' . $order->id) }}"
-                                                class="dropdown-item">Edit</a>
-                                            <a href="{{ url('user/delete-pending-order/' . $order->id) }}"
-                                                class="dropdown-item">Delete</a>
+                                                <a href="{{ url('user/view-order/' . $order->id) }}"
+                                                    class="dropdown-item">View Details</a>
+
                                         </div>
                                     </div>
                                 </div>

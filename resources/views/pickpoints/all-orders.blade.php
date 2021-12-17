@@ -16,17 +16,17 @@
 
 
     <div class="table-responsive">
-        <table class="table table-custom table-lg mb-0" id="orders">
+        <table class="table table-custom table-lg mb-10" id="orders">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Picture</th>
                     <th>Order ID</th>
-                    <th>Amount</th>
+                    <th>Client</th>
                     <th>Date Uploaded</th>
-                    <th>Collection Point</th>
-                    <th>Category</th>
-                    <th>No. of Pieces</th>
+                    <th>Collection Point</th> 
+                    <th>Notify Client</th>
+                    <th>Mark Complete</th>
                     <th class="text-end">Actions</th>
                 </tr>
             </thead>
@@ -42,11 +42,11 @@
                                     style="height: 50px;width:50px;border-radius:5px;">
                             </td>
                             <td>{{ $order->laundry_id }}</td>
-                            <td>Kshs. {{ $order->amount }}</td>
+                            <td>{{ $order->laundryuser->name }}</td>
                             <td>{{ $order->created_at->addHours(3)->format('l,d-m-y, h:i:s a') }}</td>
                             <td>{{ $order->laundrycheckpoint->collection_name }}</td>
-                            <td>{{ $order->luggage_category }}</td>
-                            <td>{{ $order->number_of_pieces }}</td>
+                            <td><a href="{{ url('collector/nofify-client/'.$order->id) }}" class="btn btn-primary">Notify Client</a></td>
+                            <td><a href="{{ url('collector/mark-collected/' . $order->id) }}" class="btn btn-success">Mark Complete</a></td>
                             <td class="text-end">
                                 <div class="d-flex">
                                     <div class="dropdown ms-auto">
@@ -55,9 +55,14 @@
                                             <i class="bi bi-three-dots"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-
+                                            @if ($order->delivery_status = 'delivered to Collection Point')
+                                                <a href="{{ url('collector/nofify-client/'.$order->id) }}"
+                                                    class="dropdown-item">Notify Client to Collect</a>
+                                            @endif
                                             <a href="{{ url('collector/order-details/' . $order->id) }}"
                                                 class="dropdown-item">Order Details</a>
+                                            <a href="{{ url('collector/mark-collected/' . $order->id) }}"
+                                                class="dropdown-item">Mark As Collected</a>
                                         </div>
                                     </div>
                                 </div>

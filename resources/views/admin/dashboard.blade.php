@@ -75,7 +75,7 @@
                 <div class="card-body">
 
                     <div class="table-responsive">
-                        <table class="table table-custom table-lg mb-0" id="recent-products">
+                        <table class="table table-custom table-lg mb-0" id="orders">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -83,7 +83,7 @@
                                     <th>Order ID</th>
                                     <th>Transaction Code</th>
                                     <th>Amount</th>
-                                    <th>Deliver Back Before</th>
+                                    <th>Payment Status</th>
                                     <th>Collection Point</th>
                                     <th>Category</th>
                                     <th>No. of Pieces</th>
@@ -102,11 +102,17 @@
                                                     style="height: 50px;width:50px;border-radius:5px;">
                                             </td>
                                             <td>{{ $neworder->laundry_id }}</td>
-                                            <td style="text-transform: uppercase;"> {{ $neworder->transaction_code }}</td>
+                                            <td> {{ $neworder->transaction_code }}</td>
                                             <td>Kshs. {{ $neworder->amount }}</td>
                                             <td>
 
-                                               {{$neworder->pickup_date}}
+                                                @if ($neworder->payment_status == 'Pending')
+                                                    <span class="badge bg-warning">Not Confirmed</span>
+                                                @elseif( $neworder->payment_status == "Accepted")
+                                                    <span class="badge bg-success">Confirmed</span>
+                                                @else
+                                                    <span class="badge bg-danger">Cancelled</span>
+                                                @endif
 
                                             </td>
                                             <td>{{ $neworder->laundrycheckpoint->collection_name }}</td>
@@ -120,9 +126,12 @@
                                                             <i class="bi bi-three-dots"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-end">
-
-                                                            <a href="{{ url('admin/deliver-customer-order/' . $neworder->id) }}"
-                                                                class="dropdown-item">Deliver Back</a>
+                                                            @if ($neworder->payment_status == 'Pending')
+                                                                <a href="{{ url('admin/confirm-payment/'. $neworder->id) }}"
+                                                                    class="dropdown-item">Verify Payment</a>
+                                                            @endif
+                                                            <a href="{{ url('admin/view-customer-order/' . $neworder->id) }}"
+                                                                class="dropdown-item">Details</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -131,8 +140,8 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="10">
-                                            <center>No New Laundry</center>
+                                        <td colspan="9">
+                                            <center>No Collection Points added</center>
                                         </td>
                                     </tr>
                                 @endif

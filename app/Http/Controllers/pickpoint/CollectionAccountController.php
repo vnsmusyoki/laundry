@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\pickpoint;
 
 use App\Http\Controllers\Controller;
+use App\Mail\CollectorNofityClient;
 use App\Models\CollectionPoint;
 use App\Models\CustomerLaundry;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class CollectionAccountController extends Controller
@@ -18,7 +20,9 @@ class CollectionAccountController extends Controller
     }
     public function index()
     {
-        return view('pickpoints.dashboard');
+        $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
+        $orders = CustomerLaundry::where('checkpoint_id', $point->id)->get();
+        return view('pickpoints.dashboard',compact('orders'));
     }
     public function createlaundry()
     {
@@ -61,7 +65,6 @@ class CollectionAccountController extends Controller
             }
         }
         $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
-
         $user = User::where('email', $request->input('email'))->get()->first();
         $laundrylength = 6;
         $str = "1234567890";
@@ -129,10 +132,40 @@ class CollectionAccountController extends Controller
         $order = CustomerLaundry::findOrFail($order);
         return view('pickpoints.view-customer-order', compact('order'));
     }
+    public function completeorder($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+        $order->laundry_status = "Cleaned";
+        $order->collection_status = "Collected";
+        $order->delivery_status = "Taken by Customer";
+        $order->save();
+        Toastr::success('Collector has been completed.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->to('collector/collected-orders');
+    }
+    public function collectedorders()
+    {
+        $point = CollectionPoint::where('user_id', auth()->user()->id)->get()->first();
+        $orders = CustomerLaundry::where('checkpoint_id', $point->id)->where('delivery_status', 'Taken by Customer')->get();
+        return view('pickpoints.picked-orders', compact('orders'));
+    }
+    public function notifyclient($order)
+    {
+
+        $order = CustomerLaundry::findOrFail($order);
+        $order->delivery_status = "returned to CheckPoint";
+        $order->save();
+        $message = "Great!, You can now collect your order " . $order->laundry_id . " from  your Collection Point is  " . $order->laundrycheckpoint->collection_name;
+        $topic = "Your Laundry has been CLEANED";
+        $receiver = $order->laundryuser->email;
+        Mail::to($receiver)->send(new CollectorNofityClient($receiver, $message, $topic));
+        Toastr::success('Collector has been notified.', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->back();
+    }
     public function accountsecurity()
     {
         return view('pickpoints.account-profile');
     }
+
     public function updatepassword(Request $request)
     {
         $this->validate($request, [

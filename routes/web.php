@@ -64,12 +64,15 @@ Route::prefix('user')->group(function () {
     Route::get('edit-pending-order/{order}', [CustomerAccountController::class, 'editpendingorder']);
     Route::get('delete-pending-order/{order}', [CustomerAccountController::class, 'deletependingorder']);
     Route::patch('update-laundry/{order}', [CustomerAccountController::class, 'updatependingorder']);
+    Route::get('view-order/{order}', [CustomerAccountController::class, 'vieworder']);
     Route::get('all-transactions', [CustomerAccountController::class, 'alltransactions']);
     Route::get('pending-laundries', [CustomerAccountController::class, 'pendinglaundries']);
     Route::get('account-security', [CustomerAccountController::class, 'accountsecurity']);
     Route::post('update-password', [CustomerAccountController::class, 'updatepassword']);
     Route::post('update-email', [CustomerAccountController::class, 'updateemail']);
     Route::post('update-picture', [CustomerAccountController::class, 'updateavatar']);
+    Route::get('received-order-payment/{order}', [CustomerAccountController::class, 'uploadpayment']);
+    Route::patch('store-payments/{order}', [CustomerAccountController::class, 'updatepayment']);
 });
 Route::get('/collector/dashboard', [CollectionAccountController::class, 'index'])->name('collector');
 Route::prefix('collector')->group(function (){
@@ -84,6 +87,9 @@ Route::prefix('collector')->group(function (){
     Route::post('update-picture', [CollectionAccountController::class, 'updateavatar']);
     Route::get('all-pending-orders', [CollectionAccountController::class, 'pendingorders']);
     Route::get('order-details/{order}', [CollectionAccountController::class, 'orderdetails']);
+    Route::get('nofify-client/{order}', [CollectionAccountController::class, 'notifyclient']);
+    Route::get('mark-collected/{order}', [CollectionAccountController::class, 'completeorder']);
     Route::get('all-orders', [CollectionAccountController::class, 'allorders']);
+    Route::get('collected-orders', [CollectionAccountController::class, 'collectedorders']);
 });
 // https://radixtouch.com/templates/admin/smart/source/light/index.html

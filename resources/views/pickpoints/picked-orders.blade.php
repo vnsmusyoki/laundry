@@ -1,5 +1,5 @@
-@extends('user.layout')
-@section('title', 'All Pending Orders')
+@extends('pickpoints.layout')
+@section('title', 'All Paid Orders')
 @section('content')
     <div class="mb-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -14,7 +14,6 @@
         </nav>
     </div>
 
-    
 
     <div class="table-responsive">
         <table class="table table-custom table-lg mb-0" id="orders">
@@ -23,7 +22,7 @@
                     <th>ID</th>
                     <th>Picture</th>
                     <th>Order ID</th>
-                    <th>Amount</th>
+                    <th>Client</th>
                     <th>Date Uploaded</th>
                     <th>Collection Point</th>
                     <th>Category</th>
@@ -43,7 +42,7 @@
                                     style="height: 50px;width:50px;border-radius:5px;">
                             </td>
                             <td>{{ $order->laundry_id }}</td>
-                            <td>Kshs. {{ $order->amount }}</td>
+                            <td>{{ $order->laundryuser->name }}</td>
                             <td>{{ $order->created_at->addHours(3)->format('l,d-m-y, h:i:s a') }}</td>
                             <td>{{ $order->laundrycheckpoint->collection_name }}</td>
                             <td>{{ $order->luggage_category }}</td>
@@ -55,11 +54,9 @@
                                             aria-expanded="false">
                                             <i class="bi bi-three-dots"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-
-                                            <a href="{{ url('user/view-order/' . $order->id) }}"
-                                                class="dropdown-item">Show Order</a>
-
+                                        <div class="dropdown-menu dropdown-menu-end"> 
+                                            <a href="{{ url('collector/order-details/' . $order->id) }}"
+                                                class="dropdown-item">Order Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +66,7 @@
                 @else
                     <tr>
                         <td colspan="9">
-                            <center>No Transactions</center>
+                            <center>Nothing to Display </center>
                         </td>
                     </tr>
                 @endif

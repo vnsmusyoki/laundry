@@ -25,7 +25,7 @@ class AdminAccountController extends Controller
     {
         $delivered = CustomerLaundry::where('laundry_status', 'Cleaned')->get();
         $paid = CustomerLaundry::where('payment_status', 'Accepted')->get();
-        $neworders = CustomerLaundry::where(['payment_status'=>'Accepted', 'laundry_status'=>'Cleaning'])->get();
+        $neworders = CustomerLaundry::where(['payment_status'=>'Pending'])->get();
         $collectors = User::where('account_category', 'Collector')->get();
 
         return view('admin.dashboard', compact(['delivered', 'paid', 'collectors', 'neworders']));

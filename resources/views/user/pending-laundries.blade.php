@@ -98,10 +98,9 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
 
-                                            <a href="{{ url('user/edit-pending-order/' . $order->id) }}"
-                                                class="dropdown-item">Edit</a>
-                                            <a href="{{ url('user/delete-pending-order/' . $order->id) }}"
-                                                class="dropdown-item">Delete</a>
+                                            <a href="{{ url('user/view-order/' . $order->id) }}"
+                                                class="dropdown-item">Details</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +110,7 @@
                 @else
                     <tr>
                         <td colspan="9">
-                            <center>No Collection Points added</center>
+                            <center>No Laundries</center>
                         </td>
                     </tr>
                 @endif

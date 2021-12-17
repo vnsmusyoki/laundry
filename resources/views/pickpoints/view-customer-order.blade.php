@@ -58,26 +58,7 @@
                                     style="text-transform: uppercase;color:red;letter-spacing:2px;">{{ $order->transaction_code }}</span></strong>
                         </div>
                     </div>
-                    @if ($order->payment_status == 'Pending')
-                        <form action="{{ url('admin/payments-verdict/' . $order->id) }}" method="POST" autocomplete="off">
-                            @method('PATCH')
-                            @csrf
-                            <div class="row g-4 mb-3">
-                                <div class="col-md-12">
-                                    <label class="form-label">Order Status</label>
-                                    <select name="payment_verdict" id="" class="form-control">
-                                        <option value="">Select an option</option>
-                                        <option value="Accept">Accept</option>
-                                        <option value="Deny">Deny/Not Received</option>
-                                    </select>
-                                    @error('payment_verdict')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <button type="submit" class="btn btn-danger mb-5">Submit Payment Verdict Now</button>
-                            </div>
-                        </form>
-                    @endif
+
                     <table class="table table-bordered">
                         <thead>
                             <th>#</th>
@@ -126,6 +107,9 @@
                                             Point</span>
                                     @elseif($order->payment_status == "Cancelled")
                                         Order Cancelled
+                                    @elseif($order->laundry_status == "Cleaned")
+                                    <span class="badge bg-danger"> Cleaned/Being Returned to Collection
+                                        Point</span>
                                     @else
                                         Waiting
                                     @endif
@@ -140,6 +124,9 @@
                                         Point</span>
                                 @elseif($order->payment_status == "Cancelled")
                                     Order Cancelled
+                                @elseif($order->collection_status = "Returned")
+                                <span class="badge bg-danger"> Cleaned/Not Yet Returned to Collection
+                                    Point</span>
                                 @else
                                     Waiting
                                 @endif
@@ -154,6 +141,8 @@
                                             Point</span>
                                     @elseif($order->payment_status == "Cancelled")
                                         Order Cancelled
+                                    @elseif($order->delivery_status = "delivered to Collection Point")
+                                    <span class="badge bg-danger">Client waiting to collect order</span>
                                     @else
                                         Waiting
                                     @endif
