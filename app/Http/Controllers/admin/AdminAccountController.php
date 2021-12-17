@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Mail\CollectorRegistration;
 use App\Models\CollectionPoint;
+use App\Models\CustomerLaundry;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
@@ -120,5 +121,25 @@ class AdminAccountController extends Controller
 
         Toastr::warning('Collection Point has been Edited.', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->to('admin/all-collection-points');
+    }
+    public function allorders()
+    {
+        $orders = CustomerLaundry::where('transaction_code', '!=', null)->get();
+        return view('admin.all-orders', compact('orders'));
+    }
+    public function confirmpayment($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+        return view('admin.confirm-payment', compact('order'));
+    }
+    public function paymentverdict(Request $request, $order)
+    {
+        $this->validate($request, [
+            'payment_verdict' => 'required'
+        ]);
+        $verdict = $request->input('payment_verdict');
+
+        $order = CustomerLaundry::findOrFail($order);
+        return view('admin.confirm-payment', compact('order'));
     }
 }

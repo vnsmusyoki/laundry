@@ -262,15 +262,13 @@
                         <span class="nav-link-icon">
                             <i class="bi bi-receipt"></i>
                         </span>
-                        <span>Orders</span>
+                        <span>Laundry Orders</span>
                     </a>
                     <ul>
                         <li>
-                            <a href="./orders.html">List</a>
+                            <a href="{{ url('admin/all-orders') }}">List</a>
                         </li>
-                        <li>
-                            <a href="./order-detail.html">Detail</a>
-                        </li>
+                        
                     </ul>
                 </li>
                 <li>

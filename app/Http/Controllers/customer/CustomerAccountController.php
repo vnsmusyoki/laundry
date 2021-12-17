@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Storage;
 
 class CustomerAccountController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('user.dashboard');

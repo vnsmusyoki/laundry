@@ -11,6 +11,10 @@ use Brian2694\Toastr\Facades\Toastr;
 
 class CollectionAccountController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('pickpoints.dashboard');
