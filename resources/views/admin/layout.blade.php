@@ -268,7 +268,7 @@
                         <li>
                             <a href="{{ url('admin/all-orders') }}">List</a>
                         </li>
-                        
+
                     </ul>
                 </li>
                 <li>
@@ -288,12 +288,9 @@
                             <a href="{{ url('admin/add-collection-point') }}">Create New Point</a>
                         </li>
                         <li>
-                            <a href="./shopping-cart.html">Shopping
-                                Cart</a>
+                            <a href="{{ url('admin/ready-laundries') }}">Ready Laundries</a>
                         </li>
-                        <li>
-                            <a href="./checkout.html">Checkout</a>
-                        </li>
+
                     </ul>
                 </li>
                 <li>
@@ -301,20 +298,12 @@
                         <span class="nav-link-icon">
                             <i class="bi bi-wallet2"></i>
                         </span>
-                        <span>Buyer</span>
+                        <span>Completed Orders</span>
                     </a>
                     <ul>
+
                         <li>
-                            <a href="./buyer-dashboard.html">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="./buyer-orders.html">Orders</a>
-                        </li>
-                        <li>
-                            <a href="./buyer-addresses.html">Addresses</a>
-                        </li>
-                        <li>
-                            <a href="./buyer-wishlist.html">Wishlist</a>
+                            <a href="{{ url('admin/completed-orders')}}">List View</a>
                         </li>
                     </ul>
                 </li>

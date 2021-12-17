@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AdminDeliverOrder;
 use App\Mail\CollectorRegistration;
 use App\Mail\OrderPayment;
 use App\Models\CollectionPoint;
@@ -129,6 +130,11 @@ class AdminAccountController extends Controller
         $orders = CustomerLaundry::where('transaction_code', '!=', null)->get();
         return view('admin.all-orders', compact('orders'));
     }
+    public function readyorders()
+    {
+        $orders = CustomerLaundry::where('laundry_status', 'Cleaning')->where('transaction_code', '!=', null)->get();
+        return view('admin.ready-laundries', compact('orders'));
+    }
     public function confirmpayment($order)
     {
         $order = CustomerLaundry::findOrFail($order);
@@ -139,6 +145,7 @@ class AdminAccountController extends Controller
         $order = CustomerLaundry::findOrFail($order);
         return view('admin.view-customer-order', compact('order'));
     }
+
     public function paymentverdict(Request $request, $order)
     {
         $this->validate($request, [
@@ -172,5 +179,24 @@ class AdminAccountController extends Controller
         }
         Toastr::success('Payment has been verified and the Email sent to the client.', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->to('admin/all-orders');
+    }
+    public function deliverorder($order)
+    {
+        $order = CustomerLaundry::findOrFail($order);
+        $order->laundry_status = "Cleaned";
+        $order->collection_status = "Returned";
+        $order->delivery_status = "delivered to Collection Point";
+        $order->save();
+        $message = "Great!, Your Laundry is Now CLEANED and has been dispatched back to your collection Point.You will be notified when to collection by the collection point Manager. Thanks for allowing us serve you.Your order ID " . $order->laundry_id . " and your Collection Point is  " . $order->laundrycheckpoint->collection_name . " . You can call this number for close monitoring as we ensure your luggage reaches the destination. Phone Number - " . $order->laundrycheckpoint->phone_number;
+        $topic = "Your Laundry has been CLEANED";
+        $receiver = $order->laundryuser->email;
+        Mail::to($receiver)->send(new AdminDeliverOrder($receiver, $message, $topic));
+         Toastr::success('Client has been notified to check with the collection point.', 'Success', ["positionClass" => "toast-top-right"]);
+
+        return redirect()->to('admin/ready-laundries');
+    }
+    public function completedorders(){
+        $orders = CustomerLaundry::where('laundry_status', 'Cleaned')->get();
+        return view('admin.completed-orders', compact('orders'));
     }
 }
