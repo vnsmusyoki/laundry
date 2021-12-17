@@ -105,7 +105,7 @@ class AdminAccountController extends Controller
             'full_names' => 'required|string',
             'town' => 'required|string',
             'phone_number' => 'required|digits:10|exists:collection_points',
-            'picture' => 'optional|image|mimes:jpeg,png,jpg|max:6048',
+            'picture' => 'image|mimes:jpeg,png,jpg|max:6048',
         ]);
 
         $station = CollectionPoint::findOrfail($id);

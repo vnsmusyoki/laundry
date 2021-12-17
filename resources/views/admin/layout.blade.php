@@ -32,71 +32,7 @@
 <body>
 
 
-    <div class="sidebar" id="settings">
-        <div class="sidebar-header">
-            <div>
-                <i class="bi bi-gear me-2"></i> Settings
-            </div>
-            <button data-sidebar-close>
-                <i class="bi bi-arrow-right"></i>
-            </button>
-        </div>
-        <div class="sidebar-content">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item px-0 border-0">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" checked>
-                        <label class="form-check-label" for="flexCheckDefault1">
-                            Remember next visits
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item px-0 border-0">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" checked>
-                        <label class="form-check-label" for="flexCheckDefault2">
-                            Enable report generation.
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item px-0 border-0">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" checked>
-                        <label class="form-check-label" for="flexCheckDefault3">
-                            Allow notifications.
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item px-0 border-0">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-                        <label class="form-check-label" for="flexCheckDefault4">
-                            Hide user requests
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item px-0 border-0">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" checked>
-                        <label class="form-check-label" for="flexCheckDefault5">
-                            Speed up demands
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item px-0 border-0">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Hide menus
-                        </label>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="sidebar-action">
-            <a href="#" class="btn btn-primary">All Settings</a>
-        </div>
-    </div>
+    
     <!-- ./ settings sidebar -->
 
     <!-- search sidebar -->
@@ -110,99 +46,14 @@
         <div class="sidebar-content">
             <form class="mb-4">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search"
-                        aria-describedby="button-search-addon">
-                    <button class="btn btn-outline-light" type="button" id="button-search-addon">
-                        <i class="bi bi-search"></i>
-                    </button>
+                     
+                     
                 </div>
             </form>
-            <h6 class="mb-3">Last searched</h6>
-            <div class="mb-4">
-                <div class="d-flex align-items-center mb-3">
-                    <a href="#" class="avatar avatar-sm me-3">
-                        <span class="avatar-text rounded-circle">
-                            <i class="bi bi-search"></i>
-                        </span>
-                    </a>
-                    <a href="#" class="flex-fill">Reports for 2021</a>
-                    <a href="#" class="btn text-danger btn-sm" data-bs-toggle="tooltip" title="Remove">
-                        <i class="bi bi-x"></i>
-                    </a>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <a href="#" class="avatar avatar-sm me-3">
-                        <span class="avatar-text rounded-circle">
-                            <i class="bi bi-search"></i>
-                        </span>
-                    </a>
-                    <a href="#" class="flex-fill">Current users</a>
-                    <a href="#" class="btn" data-bs-toggle="tooltip" title="Remove">
-                        <i class="bi bi-x"></i>
-                    </a>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <a href="#" class="avatar avatar-sm me-3">
-                        <span class="avatar-text rounded-circle">
-                            <i class="bi bi-search"></i>
-                        </span>
-                    </a>
-                    <a href="#" class="flex-fill">Meeting notes</a>
-                    <a href="#" class="btn" data-bs-toggle="tooltip" title="Remove">
-                        <i class="bi bi-x"></i>
-                    </a>
-                </div>
-            </div>
-            <h6 class="mb-3">Recently viewed</h6>
-            <div class="mb-4">
-                <div class="d-flex align-items-center mb-3">
-                    <a href="#" class="avatar avatar-secondary avatar-sm me-3">
-                        <span class="avatar-text rounded-circle">
-                            <i class="bi bi-check-circle"></i>
-                        </span>
-                    </a>
-                    <a href="#" class="flex-fill">Todo list</a>
-                    <a href="#" class="btn" data-bs-toggle="tooltip" title="Remove">
-                        <i class="bi bi-x"></i>
-                    </a>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <a href="#" class="avatar avatar-warning avatar-sm me-3">
-                        <span class="avatar-text rounded-circle">
-                            <i class="bi bi-wallet2"></i>
-                        </span>
-                    </a>
-                    <a href="#" class="flex-fill">Pricing table</a>
-                    <a href="#" class="btn" data-bs-toggle="tooltip" title="Remove">
-                        <i class="bi bi-x"></i>
-                    </a>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <a href="#" class="avatar avatar-info avatar-sm me-3">
-                        <span class="avatar-text rounded-circle">
-                            <i class="bi bi-gear"></i>
-                        </span>
-                    </a>
-                    <a href="#" class="flex-fill">Settings</a>
-                    <a href="#" class="btn" data-bs-toggle="tooltip" title="Remove">
-                        <i class="bi bi-x"></i>
-                    </a>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <a href="#" class="avatar avatar-success avatar-sm me-3">
-                        <span class="avatar-text rounded-circle">
-                            <i class="bi bi-person-circle"></i>
-                        </span>
-                    </a>
-                    <a href="#" class="flex-fill">Users</a>
-                    <a href="#" class="btn" data-bs-toggle="tooltip" title="Remove">
-                        <i class="bi bi-x"></i>
-                    </a>
-                </div>
-            </div>
+           
         </div>
         <div class="sidebar-action">
-            <a href="#" class="btn btn-danger">All Clear</a>
+           
         </div>
     </div>
     <!-- ./ search sidebar -->
@@ -368,96 +219,33 @@
                     <button class="btn btn-outline-light" type="button" id="button-addon1">
                         <i class="bi bi-search"></i>
                     </button>
-                    <input type="text" class="form-control" placeholder="Search..."
-                        aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    <a href="#" class="btn btn-outline-light close-header-search-bar">
-                        <i class="bi bi-x"></i>
+                     
                     </a>
                 </div>
             </form>
             <div class="header-bar ms-auto">
                 <ul class="navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-link-notify" data-count="2"
-                            data-sidebar-target="#notifications">
+                        <a href="#">
                             <i class="bi bi-bell icon-lg"></i>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link nav-link-notify" data-count="3" data-bs-toggle="dropdown">
+                        <a href="#" >
                             <i class="bi bi-cart2 icon-lg"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0">
                             <h6 class="m-0 px-4 py-3 border-bottom">Shopping Cart</h6>
                             <div class="dropdown-menu-body">
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center">
-                                        <a href="#" class="text-danger me-3" title="Remove">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                        <a href="#" class="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/3.jpg" class="rounded"
-                                                width="60" alt="...">
-                                        </a>
-                                        <div>
-                                            <h6>Digital clock</h6>
-                                            <div>1 x $1.190,90</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center">
-                                        <a href="#" class="text-danger me-3" title="Remove">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                        <a href="#" class="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/4.jpg" class="rounded"
-                                                width="60" alt="...">
-                                        </a>
-                                        <div>
-                                            <h6>Toy Car</h6>
-                                            <div>1 x $139.58</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center">
-                                        <a href="#" class="text-danger me-3" title="Remove">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                        <a href="#" class="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/5.jpg" class="rounded"
-                                                width="60" alt="...">
-                                        </a>
-                                        <div>
-                                            <h6>Sunglasses</h6>
-                                            <div>2 x $50,90</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center">
-                                        <a href="#" class="text-danger me-3" title="Remove">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                        <a href="#" class="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/6.jpg" class="rounded"
-                                                width="60" alt="...">
-                                        </a>
-                                        <div>
-                                            <h6>Cake</h6>
-                                            <div>1 x $10,50</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                 
                             </div>
-                            <h6 class="m-0 px-4 py-3 border-top small">Sub Total : <strong
-                                    class="text-primary">$1.442,78</strong></h6>
+                            
                         </div>
                     </li>
                     <li class="nav-item ms-3">
                         <button class="btn btn-primary btn-icon">
-                            <i class="bi bi-plus-circle"></i> Add Product
+                           Admin Account
                         </button>
                     </li>
                 </ul>
