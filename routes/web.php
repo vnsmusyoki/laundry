@@ -50,6 +50,10 @@ Route::prefix('admin')->group(function () {
     Route::patch('payments-verdict/{order}', [AdminAccountController::class, 'paymentverdict']);
     Route::get('deliver-customer-order/{order}', [AdminAccountController::class, 'deliverorder']);
     Route::get('completed-orders', [AdminAccountController::class, 'completedorders']);
+    Route::get('account-security', [AdminAccountController::class, 'accountsecurity']);
+    Route::post('update-password', [AdminAccountController::class, 'updatepassword']);
+    Route::post('update-email', [AdminAccountController::class, 'updateemail']);
+    Route::post('update-picture', [AdminAccountController::class, 'updateavatar']);
 });
 Route::get('/user/dashboard', [CustomerAccountController::class, 'index'])->name('customer');
 Route::prefix('user')->group(function () {
